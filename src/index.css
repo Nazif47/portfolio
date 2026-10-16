@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-zinc-950 text-zinc-400 antialiased selection:bg-zinc-800 selection:text-zinc-100;
+  }
+}
+
+@keyframes ambient-glow {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.15;
+  }
+  50% {
+    transform: scale(1.1) translate(-2%, 2%);
+    opacity: 0.25;
+  }
+}
+
+.bg-ambient {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(39, 39, 42, 0.4) 0%, rgba(9, 9, 11, 1) 40%);
+  animation: ambient-glow 15s ease-in-out infinite;
+  pointer-events: none;
+}
