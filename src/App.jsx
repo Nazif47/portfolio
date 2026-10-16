@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import AtmosphericBackground from './components/AtmosphericBackground';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -134,9 +135,9 @@ export default function App() {
   return (
     <Router>
       <div className="flex flex-col min-h-[100dvh] bg-zinc-950 text-zinc-400 relative overflow-hidden">
-        <div className="bg-ambient"></div>
+        <AtmosphericBackground />
         <Navbar />
-        <main className="flex flex-col flex-grow">
+        <main className="relative z-10 flex flex-col flex-grow">
           <AnimatedRoutes />
         </main>
         <Footer />
