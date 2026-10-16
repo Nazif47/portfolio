@@ -1,10 +1,27 @@
 import { useState, useEffect } from 'react';
 
+const getInitialTheme = () => {
+  if (typeof window === 'undefined') return 'dark';
+
+  const savedTheme = window.localStorage.getItem('theme');
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    return savedTheme;
+  }
+
+  const prefersDark =
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  return prefersDark ? 'dark' : 'light';
+};
+
 export function useTheme() {
   const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') return 'dark';
-    const saved = window.localStorage.getItem('theme');
-    return saved === 'light' || saved === 'dark' ? saved : 'dark';
+    const initial = getInitialTheme();
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.toggle('dark', initial === 'dark');
+    }
+    return initial;
   });
 
   useEffect(() => {

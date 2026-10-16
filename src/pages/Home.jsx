@@ -185,14 +185,14 @@ const Home = () => {
             <img 
               src={profilePic} 
               alt="Nazif" 
-              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-300 dark:border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
+              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
             />
           </MotionDiv>
 
           {/* 2. Main Heading */}
           <MotionH1
             variants={heroItemSpringVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-zinc-100"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-white"
           >
             Hi, I&apos;m Nazif.
           </MotionH1>
@@ -225,7 +225,7 @@ const Home = () => {
             >
               <Link
                 to="/projects"
-                className="block bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white font-medium px-7 py-3.5 text-base md:text-lg rounded-lg transition-all shadow-sm text-center"
+                className="block bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white font-medium px-7 py-3.5 text-base md:text-lg rounded-lg transition-all shadow-sm text-center"
               >
                 View Projects
               </Link>
@@ -237,7 +237,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="block bg-white/80 dark:bg-transparent border border-zinc-300 text-zinc-800 hover:bg-zinc-100 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center"
+                className="block bg-white dark:bg-transparent border border-zinc-300 text-zinc-800 hover:bg-zinc-100 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center shadow-sm dark:shadow-none"
               >
                 Contact Me
               </Link>
@@ -261,7 +261,7 @@ const Home = () => {
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>01 // Engineering Domains</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 What I Build
               </h2>
             </div>
@@ -288,7 +288,7 @@ const Home = () => {
                     y: -6,
                     transition: { type: 'spring', stiffness: 260, damping: 20 }
                   }}
-                  className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800/50 p-6 sm:p-7 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between overflow-hidden"
+                  className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 shadow-sm dark:shadow-none border border-zinc-200 dark:border-zinc-800/50 p-6 sm:p-7 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-300 flex flex-col justify-between overflow-hidden"
                 >
                   {/* Top Hover Specular Highlight */}
                   <div
@@ -301,12 +301,12 @@ const Home = () => {
                       <div className="w-11 h-11 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:border-teal-500/40 group-hover:bg-teal-500/10 transition-colors">
                         <IconComponent className="w-5 h-5" />
                       </div>
-                      <span className="text-[11px] font-mono text-zinc-500 dark:text-zinc-500 group-hover:text-teal-600 dark:group-hover:text-teal-400/80 transition-colors">
+                      <span className="text-[11px] font-mono text-zinc-600 dark:text-zinc-400 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                         {item.index}
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2.5 tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-800 dark:text-zinc-200 mb-2.5 tracking-tight">
                       {item.title}
                     </h3>
                     <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
@@ -318,7 +318,7 @@ const Home = () => {
                     {item.specs.map((spec, sIdx) => (
                       <div
                         key={sIdx}
-                        className="flex items-center gap-2 text-xs text-zinc-700 dark:text-zinc-300 font-mono"
+                        className="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 font-mono"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400/70" />
                         <span>{spec}</span>
@@ -347,7 +347,7 @@ const Home = () => {
                 <Layers className="w-3.5 h-3.5" />
                 <span>02 // Production Stack Matrix</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 Core Technologies
               </h2>
             </div>
@@ -374,7 +374,7 @@ const Home = () => {
                     y: -4,
                     transition: { type: 'spring', stiffness: 280, damping: 22 }
                   }}
-                  className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800/50 p-6 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-300 shadow-sm hover:shadow-xl flex flex-col overflow-hidden"
+                  className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 shadow-sm dark:shadow-none border border-zinc-200 dark:border-zinc-800/50 p-6 hover:bg-zinc-50 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-300 flex flex-col overflow-hidden"
                 >
                   <div
                     className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 dark:via-cyan-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -390,7 +390,7 @@ const Home = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight mb-4 pb-3 border-b border-zinc-200 dark:border-zinc-800/70">
+                  <h3 className="text-base sm:text-lg font-semibold text-zinc-800 dark:text-zinc-200 tracking-tight mb-4 pb-3 border-b border-zinc-200 dark:border-zinc-800/70">
                     {group.category}
                   </h3>
 
@@ -406,7 +406,7 @@ const Home = () => {
                             {skill.name}
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-500">
+                        <span className="text-[10px] font-mono text-zinc-600 dark:text-zinc-400">
                           {skill.meta}
                         </span>
                       </li>
@@ -433,13 +433,13 @@ const Home = () => {
               <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
                 <span>03 // Case Studies</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 Featured Highlights
               </h2>
             </div>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-teal-600 dark:hover:text-teal-300 transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors group"
             >
               <span>Explore Full Project Directory</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
