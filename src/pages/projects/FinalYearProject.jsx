@@ -552,7 +552,7 @@ const FinalYearProject = () => {
                     <div className="flex items-center justify-between gap-2 mb-1">
                       <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{item.protocol}</span>
                       <span
-                        className={`text-xs font-mono px-2 py-0.5 rounded ${
+                        className={`text-xs font-mono px-2 py-0.5 rounded whitespace-nowrap shrink-0 ${
                           item.highlight
                             ? 'bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border border-cyan-500/30'
                             : 'bg-zinc-200/70 dark:bg-zinc-900 text-zinc-600 dark:text-zinc-400 border border-zinc-300 dark:border-zinc-800'
@@ -610,11 +610,11 @@ const FinalYearProject = () => {
                 <table className="w-full text-left border-collapse text-xs sm:text-sm">
                   <thead>
                     <tr className="bg-zinc-100/80 dark:bg-zinc-950/90 border-b border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300">
-                      <th className="py-3.5 px-4 font-semibold">System / Authors</th>
+                      <th className="py-3.5 px-3.5 font-semibold">System / Authors</th>
                       <th className="py-3.5 px-3 font-medium text-zinc-600 dark:text-zinc-400">Protocol</th>
                       <th className="py-3.5 px-3 font-medium text-zinc-600 dark:text-zinc-400">Central Hub</th>
                       <th className="py-3.5 px-3 font-medium text-zinc-600 dark:text-zinc-400">Accountability</th>
-                      <th className="py-3.5 px-4 font-semibold text-cyan-700 dark:text-cyan-300">Response Latency</th>
+                      <th className="py-3.5 px-3.5 font-semibold text-cyan-700 dark:text-cyan-300 whitespace-nowrap">Response Latency</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800/60">
@@ -627,7 +627,7 @@ const FinalYearProject = () => {
                             : 'hover:bg-zinc-50 dark:hover:bg-zinc-800/30 transition-colors'
                         }
                       >
-                        <td className="py-3.5 px-4 font-medium text-zinc-900 dark:text-zinc-100">
+                        <td className="py-3.5 px-3.5 font-medium text-zinc-900 dark:text-zinc-100">
                           <div className="flex items-center gap-2">
                             {row.highlight && <CheckCircle2 className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />}
                             <span>{row.system}</span>
@@ -649,12 +649,12 @@ const FinalYearProject = () => {
                             {row.accountability}
                           </span>
                         </td>
-                        <td className="py-3.5 px-4 font-mono text-xs">
+                        <td className="py-3.5 px-3.5 font-mono text-xs whitespace-nowrap">
                           <span
                             className={
                               row.highlight
-                                ? 'text-cyan-700 dark:text-cyan-300 font-bold bg-cyan-500/15 px-2.5 py-1 rounded border border-cyan-500/30'
-                                : 'text-zinc-600 dark:text-zinc-400'
+                                ? 'inline-block whitespace-nowrap text-cyan-700 dark:text-cyan-300 font-bold bg-cyan-500/15 px-2.5 py-1 rounded border border-cyan-500/30'
+                                : 'inline-block whitespace-nowrap text-zinc-600 dark:text-zinc-400'
                             }
                           >
                             {row.latency}

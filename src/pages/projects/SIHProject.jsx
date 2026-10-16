@@ -891,9 +891,9 @@ const ArchifyArchitectureFlow = () => {
           </div>
         ) : (
           <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
-            <span className="inline-block w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400" />
+            <span className="inline-block w-2 h-2 rounded-full bg-teal-500 dark:bg-teal-400 shrink-0" />
             <span>
-              <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Archify Interactive Flow:</strong> Hover or click any hardware/AI node (or semantic legend role) to isolate its signal path and inspect subsystem telemetry.
+              <strong className="text-zinc-900 dark:text-zinc-200 font-medium">Interactive Architecture:</strong> Hover or select any node to isolate signal paths and inspect component data flow.
             </span>
           </div>
         )}
@@ -1229,7 +1229,7 @@ const SIHProject = () => {
               <div>
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-1">
                   <Cpu className="w-4 h-4" />
-                  Event-Driven Hardware &amp; AI Signal Flow (Archify)
+                  Event-Driven Hardware &amp; AI Signal Flow
                 </span>
                 <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
                   Conditional Vision &amp; Multi-Path Failover Architecture
