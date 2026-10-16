@@ -2,10 +2,10 @@ import { Mail } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 border-t border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md mt-auto">
+    <footer className="relative z-10 border-t border-zinc-200 dark:border-zinc-800/60 bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur-md mt-auto transition-colors duration-500">
       <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-center text-sm text-zinc-500">
+          <p className="text-center text-sm text-zinc-600 dark:text-zinc-500">
             &copy; 2026 Nazif. All rights reserved.
           </p>
           <div className="flex space-x-6">
@@ -13,7 +13,7 @@ const Footer = () => {
               href="https://github.com/Nazif47"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-200 transition-colors"
+              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
             >
               <span className="sr-only">GitHub</span>
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -28,7 +28,7 @@ const Footer = () => {
               href="https://www.linkedin.com/in/nazif-hussain"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-zinc-200 transition-colors"
+              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
             >
               <span className="sr-only">LinkedIn</span>
               <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@ const Footer = () => {
             </a>
             <a
               href="mailto:nazif.h45@gmail.com"
-              className="text-zinc-500 hover:text-zinc-200 transition-colors"
+              className="text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-200 transition-colors"
             >
               <span className="sr-only">Email</span>
               <Mail className="h-5 w-5" />

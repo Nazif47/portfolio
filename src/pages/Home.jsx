@@ -185,7 +185,7 @@ const Home = () => {
             <img 
               src={profilePic} 
               alt="Nazif" 
-              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
+              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-300 dark:border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
             />
           </MotionDiv>
 
@@ -225,7 +225,7 @@ const Home = () => {
             >
               <Link
                 to="/projects"
-                className="block bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-white transition-all shadow-sm text-center"
+                className="block bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white font-medium px-7 py-3.5 text-base md:text-lg rounded-lg transition-all shadow-sm text-center"
               >
                 View Projects
               </Link>
@@ -237,7 +237,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="block border border-zinc-300 text-zinc-700 hover:bg-zinc-200/70 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center"
+                className="block bg-white/80 dark:bg-transparent border border-zinc-300 text-zinc-800 hover:bg-zinc-100 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center"
               >
                 Contact Me
               </Link>
@@ -254,18 +254,18 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-800/70 pb-6"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
           >
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>01 // Engineering Domains</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                 What I Build
               </h2>
             </div>
-            <p className="text-zinc-400 max-w-md text-sm sm:text-base">
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-sm sm:text-base">
               Cohesive hardware-to-cloud architectures that connect physical telemetry with modern web interfaces and automated workflows.
             </p>
           </MotionDiv>
@@ -288,39 +288,39 @@ const Home = () => {
                     y: -6,
                     transition: { type: 'spring', stiffness: 260, damping: 20 }
                   }}
-                  className="group relative rounded-2xl bg-zinc-900/55 backdrop-blur-xl border border-zinc-800/80 p-6 sm:p-7 hover:border-zinc-700 hover:bg-neutral-800/50 transition-colors duration-300 shadow-sm hover:shadow-2xl flex flex-col justify-between overflow-hidden"
+                  className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800/50 p-6 sm:p-7 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-300 shadow-sm hover:shadow-xl flex flex-col justify-between overflow-hidden"
                 >
                   {/* Top Hover Specular Highlight */}
                   <div
-                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-500/60 dark:via-teal-400/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     aria-hidden="true"
                   />
 
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="w-11 h-11 rounded-xl bg-zinc-950 border border-zinc-800 flex items-center justify-center text-teal-400 group-hover:border-teal-500/40 group-hover:bg-teal-500/10 transition-colors">
+                      <div className="w-11 h-11 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:border-teal-500/40 group-hover:bg-teal-500/10 transition-colors">
                         <IconComponent className="w-5 h-5" />
                       </div>
-                      <span className="text-[11px] font-mono text-zinc-500 group-hover:text-teal-400/80 transition-colors">
+                      <span className="text-[11px] font-mono text-zinc-500 dark:text-zinc-500 group-hover:text-teal-600 dark:group-hover:text-teal-400/80 transition-colors">
                         {item.index}
                       </span>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-100 mb-2.5 tracking-tight">
+                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2.5 tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-zinc-400 leading-relaxed mb-6">
+                    <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                       {item.description}
                     </p>
                   </div>
 
-                  <div className="pt-4 border-t border-zinc-800/70 space-y-2">
+                  <div className="pt-4 border-t border-zinc-200 dark:border-zinc-800/70 space-y-2">
                     {item.specs.map((spec, sIdx) => (
                       <div
                         key={sIdx}
-                        className="flex items-center gap-2 text-xs text-zinc-300 font-mono"
+                        className="flex items-center gap-2 text-xs text-zinc-700 dark:text-zinc-300 font-mono"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-teal-400/70" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400/70" />
                         <span>{spec}</span>
                       </div>
                     ))}
@@ -340,18 +340,18 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-800/70 pb-6"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
           >
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-400 mb-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 mb-2">
                 <Layers className="w-3.5 h-3.5" />
                 <span>02 // Production Stack Matrix</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Core Technologies
               </h2>
             </div>
-            <p className="text-zinc-400 max-w-md text-sm sm:text-base">
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-sm sm:text-base">
               Categorized tools, frameworks, and embedded hardware platforms engineered to ship resilient end-to-end systems.
             </p>
           </MotionDiv>
@@ -374,23 +374,23 @@ const Home = () => {
                     y: -4,
                     transition: { type: 'spring', stiffness: 280, damping: 22 }
                   }}
-                  className="group relative rounded-2xl bg-zinc-900/55 backdrop-blur-xl border border-zinc-800/80 p-6 hover:bg-neutral-800/50 hover:border-zinc-700 transition-colors duration-300 flex flex-col overflow-hidden"
+                  className="group relative rounded-2xl bg-white dark:bg-zinc-900/50 backdrop-blur-xl border border-zinc-200 dark:border-zinc-800/50 p-6 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors duration-300 shadow-sm hover:shadow-xl flex flex-col overflow-hidden"
                 >
                   <div
-                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 dark:via-cyan-400/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                     aria-hidden="true"
                   />
 
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-950/90 text-zinc-400 border border-zinc-800 group-hover:text-cyan-300 group-hover:border-cyan-500/30 transition-colors">
+                    <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-950/90 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 group-hover:border-cyan-500/30 transition-colors">
                       {group.layer}
                     </span>
-                    <div className="w-8 h-8 rounded-lg bg-zinc-950 border border-zinc-800 flex items-center justify-center text-teal-400 group-hover:border-teal-500/30 transition-colors shrink-0">
+                    <div className="w-8 h-8 rounded-lg bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:border-teal-500/30 transition-colors shrink-0">
                       <IconComponent className="w-4 h-4" />
                     </div>
                   </div>
 
-                  <h3 className="text-base sm:text-lg font-semibold text-zinc-100 tracking-tight mb-4 pb-3 border-b border-zinc-800/70">
+                  <h3 className="text-base sm:text-lg font-semibold text-zinc-900 dark:text-zinc-100 tracking-tight mb-4 pb-3 border-b border-zinc-200 dark:border-zinc-800/70">
                     {group.category}
                   </h3>
 
@@ -398,15 +398,15 @@ const Home = () => {
                     {group.skills.map((skill, sIdx) => (
                       <li
                         key={sIdx}
-                        className="flex items-center justify-between gap-2 rounded-lg bg-zinc-950/50 border border-zinc-800/60 px-3 py-2 group-hover:border-zinc-700/70 transition-colors"
+                        className="flex items-center justify-between gap-2 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200/80 dark:border-zinc-800/60 px-3 py-2 group-hover:bg-white dark:group-hover:bg-zinc-900/70 group-hover:border-zinc-300 dark:group-hover:border-zinc-700/70 transition-colors"
                       >
                         <div className="flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-teal-400/80 shrink-0" />
-                          <span className="text-xs sm:text-sm font-medium text-zinc-200">
+                          <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400/80 shrink-0" />
+                          <span className="text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200">
                             {skill.name}
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono text-zinc-500">
+                        <span className="text-[10px] font-mono text-zinc-500 dark:text-zinc-500">
                           {skill.meta}
                         </span>
                       </li>
@@ -427,19 +427,19 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-800/70 pb-6"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
           >
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-400 mb-2">
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
                 <span>03 // Case Studies</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Featured Highlights
               </h2>
             </div>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-300 hover:text-teal-300 transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-teal-600 dark:hover:text-teal-300 transition-colors group"
             >
               <span>Explore Full Project Directory</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

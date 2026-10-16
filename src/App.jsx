@@ -134,10 +134,10 @@ const AnimatedRoutes = () => {
 export default function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-[100dvh] bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 relative overflow-hidden transition-colors duration-300">
+      <div className="flex flex-col min-h-[100dvh] bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 relative overflow-hidden transition-colors duration-500">
         <AtmosphericBackground />
         <Navbar />
-        <main className="relative z-10 flex flex-col flex-grow">
+        <main className="relative z-10 flex flex-col flex-grow bg-transparent text-zinc-900 dark:text-zinc-100 transition-colors duration-500">
           <AnimatedRoutes />
         </main>
         <Footer />
