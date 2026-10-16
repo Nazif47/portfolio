@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Cpu, Eye, Wifi, Zap, ShieldCheck } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 import profilePic from '../assets/Nazif_Fromal_Image.png';
 
@@ -64,13 +65,23 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ProjectCard 
               title="Smart Blind Stick"
-              description="Adaptive multimodal sensing cane & smart goggles featuring dual-level ToF ranging (VL53L5CX/VL53L0X), conditional ESP32-CAM AI vision (Gemini API + local ONNX fallback), and GSM-to-RF emergency failover."
+              description="An adaptive assistive mobility platform combining sensor-fused hardware with conditional edge-to-cloud AI."
+              highlights={[
+                { icon: Cpu, label: "Dual-Level ToF Ranging" },
+                { icon: Eye, label: "Gemini + ONNX Vision" },
+                { icon: Wifi, label: "GSM & RF Failover" }
+              ]}
               tags={["ESP32-CAM", "ToF Sensors", "Hybrid AI (Gemini/ONNX)", "NRF24L01"]}
               link="/projects/sih"
             />
             <ProjectCard 
-              title="Aura-x9 IoT Lab Safety Network"
-              description="Decentralized 4-zone ESP32 edge telemetry network with MQTT Mosquitto broker on Raspberry Pi, correlating MQ-2/DHT22 environmental hazards with RC522 RFID accountability for sub-200ms industrial relay mitigation."
+              title="SmartLab Safety System"
+              description="A distributed, edge-computing IoT safety network featuring real-time RFID spatial accountability and zero-latency mitigation."
+              highlights={[
+                { icon: Zap, label: "Sub-200ms Actuation" },
+                { icon: Wifi, label: "MQTT Edge Telemetry" },
+                { icon: ShieldCheck, label: "RFID Spatial Tracking" }
+              ]}
               tags={["ESP32", "MQTT / Mosquitto", "Raspberry Pi", "RC522 RFID"]}
               link="/projects/final-year"
             />

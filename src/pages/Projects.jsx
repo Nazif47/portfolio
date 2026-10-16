@@ -1,7 +1,48 @@
-import { Link } from 'react-router-dom';
+import { Cpu, Eye, Wifi, Zap, ShieldCheck } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 
 const Projects = () => {
+  const projects = [
+    {
+      title: 'Smart Blind Stick',
+      badge: 'SIH Flagship Project',
+      description:
+        'An adaptive assistive mobility platform combining sensor-fused hardware with conditional edge-to-cloud AI.',
+      highlights: [
+        { icon: Cpu, label: 'Dual-Level ToF Ranging' },
+        { icon: Eye, label: 'Gemini + ONNX Vision' },
+        { icon: Wifi, label: 'GSM & RF Failover' }
+      ],
+      tags: [
+        'ESP32 & ESP32-CAM',
+        'VL53L5CX / VL53L0X ToF',
+        'Gemini API + Local ONNX',
+        'GSM & NRF24L01 Failover',
+        'MPU6050 IMU'
+      ],
+      link: '/projects/sih'
+    },
+    {
+      title: 'SmartLab Safety System',
+      badge: 'Final Year Project',
+      description:
+        'A distributed, edge-computing IoT safety network featuring real-time RFID spatial accountability and zero-latency mitigation.',
+      highlights: [
+        { icon: Zap, label: 'Sub-200ms Actuation' },
+        { icon: Wifi, label: 'MQTT Edge Telemetry' },
+        { icon: ShieldCheck, label: 'RFID Spatial Tracking' }
+      ],
+      tags: [
+        'ESP32 Edge Nodes',
+        'MQTT & Mosquitto',
+        'Raspberry Pi',
+        'RC522 RFID Accountability',
+        'Sub-200ms Actuation'
+      ],
+      link: '/projects/final-year'
+    }
+  ];
+
   return (
     <div className="pt-24 pb-16 min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,59 +59,18 @@ const Projects = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* SIH Project: Smart Blind Stick */}
-          <div className="h-full flex flex-col">
+          {projects.map((project) => (
             <ProjectCard
-              title="SIH Project: Smart Blind Stick"
-              description="An adaptive multimodal assistive mobility platform featuring dual-level Time-of-Flight (VL53L5CX foot + VL53L0X/Arduino Nano head interrupt) sensing, MPU6050 tilt tracking, conditional ESP32-CAM vision activation, a hybrid Gemini Cloud to local ONNX AI pipeline, and SIM800L GSM to NRF24L01 RF emergency failover."
-              tags={[
-                'ESP32 & ESP32-CAM',
-                'VL53L5CX / VL53L0X ToF',
-                'Gemini API + Local ONNX',
-                'GSM & NRF24L01 Failover',
-                'MPU6050 IMU'
-              ]}
-              link="/projects/sih"
+              key={project.link}
+              title={project.title}
+              badge={project.badge}
+              description={project.description}
+              highlights={project.highlights}
+              tags={project.tags}
+              link={project.link}
+              ctaText="View Architecture"
             />
-            <div className="mt-4 text-right">
-              <Link
-                to="/projects/sih"
-                className="text-zinc-400 hover:text-zinc-100 font-medium text-sm inline-flex items-center transition-colors"
-              >
-                Read full case study
-                <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-
-          {/* Final Year Project: Aura-x9 IoT Lab Safety Network */}
-          <div className="h-full flex flex-col">
-            <ProjectCard
-              title="Final Year Project: Aura-x9 IoT Lab Safety Network"
-              description="A scalable, distributed 4-zone laboratory safety and forensic accountability network utilizing custom ESP32 edge nodes (MQ-2, DHT22, PIR, RC522 RFID) streaming MQTT telemetry to a central Raspberry Pi Eclipse Mosquitto broker for sub-200ms industrial relay actuation and live WebSockets visualization."
-              tags={[
-                'ESP32 Edge Nodes',
-                'MQTT & Mosquitto',
-                'Raspberry Pi',
-                'RC522 RFID Accountability',
-                'Sub-200ms Actuation'
-              ]}
-              link="/projects/final-year"
-            />
-            <div className="mt-4 text-right">
-              <Link
-                to="/projects/final-year"
-                className="text-zinc-400 hover:text-zinc-100 font-medium text-sm inline-flex items-center transition-colors"
-              >
-                Read full case study
-                <svg className="ml-1 w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
