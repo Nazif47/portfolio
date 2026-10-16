@@ -1,17 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Nazif Portfolio Favicon">
   <style>
-    /* Default & OS Light Mode: dark tile, light monogram, aqua spark */
     .bg-tile { fill: #111214; }
     .monogram { fill: #FAFAFA; }
     .spark { fill: #46E3D8; }
 
-    @media (prefers-color-scheme: light) {
-      .bg-tile { fill: #111214; }
-      .monogram { fill: #FAFAFA; }
-      .spark { fill: #46E3D8; }
-    }
-
-    /* OS Dark Mode: pale tile, near-black monogram, teal spark */
     @media (prefers-color-scheme: dark) {
       .bg-tile { fill: #FAFAFA; }
       .monogram { fill: #111214; }
