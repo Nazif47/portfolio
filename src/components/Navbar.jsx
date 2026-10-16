@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+import { useTheme } from '../hooks/useTheme';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -14,17 +16,20 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
+    <nav className="fixed top-0 z-50 w-full border-b border-zinc-200/80 dark:border-zinc-800/60 bg-zinc-50/80 dark:bg-zinc-950/80 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <NavLink to="/" className="text-xl font-bold tracking-tight text-zinc-100">
+            <NavLink
+              to="/"
+              className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 transition-colors"
+            >
               Portfolio
             </NavLink>
           </div>
           
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-baseline space-x-8">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.name}
@@ -32,8 +37,8 @@ const Navbar = () => {
                   className={({ isActive }) =>
                     `px-3 py-2 text-sm transition-colors ${
                       isActive
-                        ? 'text-zinc-100 font-medium'
-                        : 'text-zinc-400 hover:text-zinc-100'
+                        ? 'text-zinc-900 dark:text-zinc-100 font-medium'
+                        : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
                     }`
                   }
                 >
@@ -41,12 +46,38 @@ const Navbar = () => {
                 </NavLink>
               ))}
             </div>
+
+            <button
+              onClick={toggleTheme}
+              type="button"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="p-2 rounded-full text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </button>
           </div>
           
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex items-center gap-2 md:hidden">
+            <button
+              onClick={toggleTheme}
+              type="button"
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              className="p-2 rounded-full text-zinc-600 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200 dark:hover:bg-zinc-800 transition-colors"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </button>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-zinc-400 hover:text-zinc-100 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
@@ -56,7 +87,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-t border-zinc-800/60 bg-zinc-950/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-zinc-200/80 dark:border-zinc-800/60 bg-zinc-50/95 dark:bg-zinc-950/95 backdrop-blur-xl transition-colors duration-300">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <NavLink
@@ -66,8 +97,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `block px-3 py-2 rounded-md text-base ${
                     isActive
-                      ? 'text-zinc-100 font-medium bg-zinc-900/50'
-                      : 'text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/30'
+                      ? 'text-zinc-900 dark:text-zinc-100 font-medium bg-zinc-200/60 dark:bg-zinc-900/50'
+                      : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-200/40 dark:hover:bg-zinc-900/30'
                   }`
                 }
               >

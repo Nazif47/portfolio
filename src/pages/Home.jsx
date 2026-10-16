@@ -26,8 +26,8 @@ const heroContainerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.05
+      staggerChildren: 0.13,
+      delayChildren: 0.06
     }
   }
 };
@@ -95,29 +95,6 @@ const Home = () => {
   const MotionH1 = motion.h1;
   const MotionH2 = motion.h2;
   const MotionP = motion.p;
-
-  const heroMetrics = [
-    {
-      value: '< 200ms',
-      label: 'Edge-to-Relay Latency',
-      detail: 'MQTT + Headless Hardware'
-    },
-    {
-      value: 'Hybrid AI',
-      label: 'Vision Inference Pipeline',
-      detail: 'Gemini Cloud + ONNX Edge'
-    },
-    {
-      value: '4-Layer',
-      label: 'System Architecture',
-      detail: 'MCU • Broker • API • UI'
-    },
-    {
-      value: 'Zero-Touch',
-      label: 'Business Automation',
-      detail: 'n8n • Make.com • ERP Sync'
-    }
-  ];
 
   const valuePropositions = [
     {
@@ -194,135 +171,79 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col flex-grow w-full pt-20">
-      {/* Hero Section */}
-      <section className="relative py-12 md:py-20 lg:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <MotionDiv
-            variants={heroContainerVariants}
-            initial="hidden"
-            animate="visible"
-            className="relative rounded-3xl border border-zinc-800/80 bg-zinc-900/40 backdrop-blur-xl px-6 py-12 sm:px-12 sm:py-16 shadow-[0_0_80px_-20px_rgba(20,184,166,0.12)] overflow-hidden"
-          >
-            {/* Top Specular Accent Line */}
-            <div
-              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-teal-400/50 to-transparent"
-              aria-hidden="true"
+    <div className="flex flex-col flex-grow w-full pt-16">
+      {/* Hero Section (Clean, Unboxed Centered Stack) */}
+      <section className="min-h-[85vh] flex flex-col justify-center items-center py-12 md:py-20">
+        <MotionDiv
+          variants={heroContainerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-5xl lg:max-w-6xl mx-auto px-6 text-center flex flex-col items-center"
+        >
+          {/* 1. Profile Image (Preserving exact image rendering & grayscale hover effect) */}
+          <MotionDiv variants={heroAvatarVariants}>
+            <img 
+              src={profilePic} 
+              alt="Nazif" 
+              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
             />
-            <div
-              className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[36rem] h-64 bg-teal-500/[0.06] rounded-full blur-3xl"
-              aria-hidden="true"
-            />
-
-            {/* Corner Architectural Crosshairs */}
-            <span className="pointer-events-none absolute top-4 left-5 font-mono text-xs text-zinc-700 select-none">+</span>
-            <span className="pointer-events-none absolute top-4 right-5 font-mono text-xs text-zinc-700 select-none">+</span>
-
-            <div className="relative z-10 text-center flex flex-col items-center">
-              {/* Live Status Telemetry Pill */}
-              <MotionDiv
-                variants={heroItemSpringVariants}
-                className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-950/80 border border-zinc-800/90 text-xs text-zinc-300 mb-8 shadow-sm"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-400" />
-                </span>
-                <span className="font-mono uppercase tracking-wider text-[11px] text-zinc-300">
-                  Available for Engineering Roles &amp; Systems Architecture
-                </span>
-              </MotionDiv>
-
-              {/* 1. Profile Image Entrance (CRITICAL: Exact preserved image rendering & hover effect) */}
-              <MotionDiv variants={heroAvatarVariants} className="relative">
-                <img 
-                  src={profilePic} 
-                  alt="Nazif" 
-                  className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
-                />
-              </MotionDiv>
-
-              {/* 2. Main Heading Entrance */}
-              <MotionH1
-                variants={heroItemSpringVariants}
-                className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight mb-4 text-zinc-100"
-              >
-                Hi, I&apos;m Nazif.
-              </MotionH1>
-
-              {/* 3. Gradient Sub-Heading Entrance */}
-              <MotionH2
-                variants={heroItemSpringVariants}
-                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-zinc-100 via-teal-300 to-cyan-400"
-              >
-                Full-Stack Engineer &amp; IoT Solutions Architect
-              </MotionH2>
-
-              {/* 4. Bio Entrance */}
-              <MotionP
-                variants={heroItemSpringVariants}
-                className="mt-1 max-w-2xl text-base sm:text-lg md:text-xl text-zinc-400 mx-auto font-light leading-relaxed"
-              >
-                I build intelligent, end-to-end systems—bridging the gap between distributed edge hardware, business automation, and high-performance modern web applications.
-              </MotionP>
-
-              {/* 5. CTA Buttons Entrance */}
-              <MotionDiv
-                variants={heroItemSpringVariants}
-                className="mt-9 flex flex-col sm:flex-row justify-center gap-4 w-full sm:w-auto"
-              >
-                <MotionDiv
-                  whileHover={{ y: -2, scale: 1.015 }}
-                  whileTap={{ scale: 0.985 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                >
-                  <Link
-                    to="/projects"
-                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-zinc-100 text-zinc-950 font-medium px-7 py-3.5 text-base rounded-xl hover:bg-white transition-all shadow-sm"
-                  >
-                    <span>View Projects</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </MotionDiv>
-                <MotionDiv
-                  whileHover={{ y: -2, scale: 1.015 }}
-                  whileTap={{ scale: 0.985 }}
-                  transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                >
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center justify-center w-full sm:w-auto bg-zinc-950/70 border border-zinc-800 text-zinc-200 px-7 py-3.5 text-base rounded-xl hover:bg-zinc-900 hover:border-zinc-700 transition-all"
-                  >
-                    Contact Me
-                  </Link>
-                </MotionDiv>
-              </MotionDiv>
-
-              {/* Architectural Telemetry Ribbon inside Hero */}
-              <MotionDiv
-                variants={heroItemSpringVariants}
-                className="w-full mt-12 pt-8 border-t border-zinc-800/80 grid grid-cols-2 lg:grid-cols-4 gap-4 text-left"
-              >
-                {heroMetrics.map((metric, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-xl bg-zinc-950/60 border border-zinc-800/70 px-4 py-3.5 hover:border-zinc-700/80 transition-colors"
-                  >
-                    <div className="text-lg sm:text-xl font-bold tracking-tight text-zinc-100 font-mono">
-                      {metric.value}
-                    </div>
-                    <div className="text-xs font-medium text-zinc-300 mt-0.5">
-                      {metric.label}
-                    </div>
-                    <div className="text-[11px] text-teal-400/80 font-mono mt-0.5">
-                      {metric.detail}
-                    </div>
-                  </div>
-                ))}
-              </MotionDiv>
-            </div>
           </MotionDiv>
-        </div>
+
+          {/* 2. Main Heading */}
+          <MotionH1
+            variants={heroItemSpringVariants}
+            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-zinc-100"
+          >
+            Hi, I&apos;m Nazif.
+          </MotionH1>
+
+          {/* 3. Gradient Sub-Heading */}
+          <MotionH2
+            variants={heroItemSpringVariants}
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 via-teal-600 to-cyan-600 dark:from-zinc-100 dark:via-teal-300 dark:to-cyan-400"
+          >
+            Full-Stack Engineer &amp; IoT Solutions Architect
+          </MotionH2>
+
+          {/* 4. Bio */}
+          <MotionP
+            variants={heroItemSpringVariants}
+            className="mt-2 max-w-3xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mx-auto font-light leading-relaxed"
+          >
+            I build intelligent, end-to-end systems—bridging the gap between distributed edge hardware, business automation, and high-performance modern web applications.
+          </MotionP>
+
+          {/* 5. CTA Buttons */}
+          <MotionDiv
+            variants={heroItemSpringVariants}
+            className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+          >
+            <MotionDiv
+              whileHover={{ y: -2, scale: 1.015 }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            >
+              <Link
+                to="/projects"
+                className="block bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-white transition-all shadow-sm text-center"
+              >
+                View Projects
+              </Link>
+            </MotionDiv>
+            <MotionDiv
+              whileHover={{ y: -2, scale: 1.015 }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            >
+              <Link
+                to="/contact"
+                className="block border border-zinc-300 text-zinc-700 hover:bg-zinc-200/70 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center"
+              >
+                Contact Me
+              </Link>
+            </MotionDiv>
+          </MotionDiv>
+        </MotionDiv>
       </section>
 
       {/* What I Build Section (Value Proposition) */}

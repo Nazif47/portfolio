@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
  * 1. Slowly evolving mathematical topographical isolines / harmonic wave contours
  * 2. Interactive constellation telemetry nodes with orthogonal/geodesic traces
  * 3. Architectural blueprint micro-grid + SVG film grain overlay
+ * Automatically adapts stroke contrast for both Light and Dark themes.
  */
 const AtmosphericBackground = () => {
   const canvasRef = useRef(null);
@@ -40,7 +41,6 @@ const AtmosphericBackground = () => {
     window.addEventListener('resize', handleResize, { passive: true });
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
 
-    // Generate deterministic-feeling telemetry nodes across the viewport
     const nodeCount = Math.min(38, Math.max(20, Math.floor((width * height) / 48000)));
     const nodes = Array.from({ length: nodeCount }, (_, i) => ({
       x: ((i * 197) % 100) * 0.01 * width,
@@ -55,8 +55,8 @@ const AtmosphericBackground = () => {
 
     const render = () => {
       time += 0.0045;
+      const isDark = document.documentElement.classList.contains('dark');
 
-      // Smooth pointer interpolation
       pointer.x += (pointer.targetX - pointer.x) * 0.04;
       pointer.y += (pointer.targetY - pointer.y) * 0.04;
 
@@ -94,11 +94,16 @@ const AtmosphericBackground = () => {
           }
         }
 
-        const alpha = 0.028 + Math.sin(time + c) * 0.01;
+        const baseAlpha = isDark ? 0.028 : 0.075;
+        const alpha = baseAlpha + Math.sin(time + c) * 0.01;
         ctx.strokeStyle =
           c % 2 === 0
-            ? `rgba(20, 184, 166, ${alpha.toFixed(3)})`
-            : `rgba(56, 189, 248, ${(alpha * 0.85).toFixed(3)})`;
+            ? isDark
+              ? `rgba(20, 184, 166, ${alpha.toFixed(3)})`
+              : `rgba(13, 148, 136, ${alpha.toFixed(3)})`
+            : isDark
+              ? `rgba(56, 189, 248, ${(alpha * 0.85).toFixed(3)})`
+              : `rgba(2, 132, 199, ${(alpha * 0.85).toFixed(3)})`;
         ctx.lineWidth = 1;
         ctx.stroke();
       }
@@ -116,7 +121,6 @@ const AtmosphericBackground = () => {
         if (n.y < -40) n.y = height + 40;
         if (n.y > height + 40) n.y = -40;
 
-        // Subtle attraction/repulsion to cursor
         const pdx = pointer.x - n.x;
         const pdy = pointer.y - n.y;
         const pDist = Math.sqrt(pdx * pdx + pdy * pdy);
@@ -127,7 +131,6 @@ const AtmosphericBackground = () => {
           n.y -= (pdy / pDist) * factor;
         }
 
-        // Connect nearby nodes with fine vector filaments
         for (let j = i + 1; j < nodes.length; j++) {
           const m = nodes[j];
           const dx = n.x - m.x;
@@ -137,24 +140,28 @@ const AtmosphericBackground = () => {
 
           if (distSq < maxSq) {
             const dist = Math.sqrt(distSq);
-            const strength = (1 - dist / connectionRadius) * 0.085;
+            const strength = (1 - dist / connectionRadius) * (isDark ? 0.085 : 0.14);
             ctx.beginPath();
             ctx.moveTo(n.x, n.y);
             ctx.lineTo(m.x, m.y);
-            ctx.strokeStyle = `rgba(161, 161, 170, ${strength.toFixed(3)})`;
+            ctx.strokeStyle = isDark
+              ? `rgba(161, 161, 170, ${strength.toFixed(3)})`
+              : `rgba(82, 82, 91, ${strength.toFixed(3)})`;
             ctx.lineWidth = 0.75;
             ctx.stroke();
           }
         }
 
-        // Draw node crosshair / telemetry dot
         const pulse = 0.45 + 0.35 * Math.sin(time * 2.2 + n.phase);
+        const mult = isDark ? 1 : 1.45;
         ctx.fillStyle =
           n.accent === 'teal'
-            ? `rgba(45, 212, 191, ${(pulse * 0.32).toFixed(3)})`
+            ? `rgba(13, 148, 136, ${(pulse * 0.32 * mult).toFixed(3)})`
             : n.accent === 'cyan'
-              ? `rgba(56, 189, 248, ${(pulse * 0.28).toFixed(3)})`
-              : `rgba(212, 212, 216, ${(pulse * 0.22).toFixed(3)})`;
+              ? `rgba(2, 132, 199, ${(pulse * 0.28 * mult).toFixed(3)})`
+              : isDark
+                ? `rgba(212, 212, 216, ${(pulse * 0.22).toFixed(3)})`
+                : `rgba(82, 82, 91, ${(pulse * 0.32).toFixed(3)})`;
 
         ctx.beginPath();
         ctx.arc(n.x, n.y, 1.4, 0, Math.PI * 2);
@@ -170,9 +177,9 @@ const AtmosphericBackground = () => {
         pointer.y,
         420
       );
-      radial.addColorStop(0, 'rgba(20, 184, 166, 0.042)');
-      radial.addColorStop(0.45, 'rgba(14, 165, 233, 0.018)');
-      radial.addColorStop(1, 'rgba(9, 9, 11, 0)');
+      radial.addColorStop(0, isDark ? 'rgba(20, 184, 166, 0.042)' : 'rgba(20, 184, 166, 0.065)');
+      radial.addColorStop(0.45, isDark ? 'rgba(14, 165, 233, 0.018)' : 'rgba(14, 165, 233, 0.03)');
+      radial.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
       ctx.fillStyle = radial;
       ctx.fillRect(0, 0, width, height);
@@ -194,17 +201,17 @@ const AtmosphericBackground = () => {
       className="pointer-events-none fixed inset-0 z-0 overflow-hidden select-none"
       aria-hidden="true"
     >
-      {/* Base Obsidian Deep Radial Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(20,184,166,0.08),rgba(9,9,11,0)_70%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_85%_100%,rgba(14,165,233,0.06),rgba(9,9,11,0)_70%)]" />
+      {/* Base Deep Radial Vignette */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(20,184,166,0.08),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_85%_100%,rgba(14,165,233,0.06),transparent_70%)]" />
 
       {/* Architectural Micro-Grid with Radial Mask */}
       <div
-        className="absolute inset-0 opacity-[0.16]"
+        className="absolute inset-0 opacity-[0.22] dark:opacity-[0.16]"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(63, 63, 70, 0.28) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(63, 63, 70, 0.28) 1px, transparent 1px)
+            linear-gradient(to right, rgba(113, 113, 122, 0.25) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(113, 113, 122, 0.25) 1px, transparent 1px)
           `,
           backgroundSize: '56px 56px',
           maskImage:
