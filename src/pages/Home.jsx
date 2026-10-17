@@ -49,59 +49,51 @@ const createPlaceholderDataUri = (label, sublabel, accentHex) => {
 
 const sihMarqueeItems = [
   {
-    src: '/images/sih-1.jpg',
-    phase: 'PHASE 01 // GRAND FINALE',
-    caption: 'Grand Finale Pitch - New Delhi',
-    fallback: createPlaceholderDataUri('Grand Finale Pitch - New Delhi', 'SIH // NATIONAL FINALE', '#14b8a6')
+    src: '/images/sih-winning-solo.jpg',
+    caption: 'Hardware Edition Winners',
+    fallback: createPlaceholderDataUri('Hardware Edition Winners', 'SIH // WINNER', '#14b8a6')
   },
   {
-    src: '/images/sih-2.jpg',
-    phase: 'PHASE 02 // FIELD VALIDATION',
-    caption: 'Team AURA +999 Prototype Testing',
-    fallback: createPlaceholderDataUri('Team AURA +999 Prototype Testing', 'SIH // FIELD EVALUATION', '#0ea5e9')
+    src: '/images/sih-day3-talk.jpg',
+    caption: 'Day 3 Mentoring & Evaluation',
+    fallback: createPlaceholderDataUri('Day 3 Mentoring & Evaluation', 'SIH // DAY 3', '#0ea5e9')
   },
   {
-    src: '/images/sih-3.jpg',
-    phase: 'PHASE 03 // EMBEDDED CORE',
-    caption: 'Hardware Integration',
-    fallback: createPlaceholderDataUri('Hardware Integration', 'SIH // SENSOR FUSION', '#14b8a6')
+    src: '/images/sih-day4-explanation.jpg',
+    caption: 'Day 4 Hardware Explanation',
+    fallback: createPlaceholderDataUri('Day 4 Hardware Explanation', 'SIH // DAY 4', '#14b8a6')
   },
   {
-    src: '/images/sih-4.jpg',
-    phase: 'PHASE 04 // JURY EVALUATION',
-    caption: 'Edge-to-Cloud Vision Calibration',
-    fallback: createPlaceholderDataUri('Edge-to-Cloud Vision Calibration', 'SIH // GEMINI + ONNX', '#38bdf8')
+    src: '/images/sih-explanation.jpg',
+    caption: 'Prototype & Workbench Demonstration',
+    fallback: createPlaceholderDataUri('Prototype & Workbench Demonstration', 'SIH // WORKBENCH', '#38bdf8')
   },
   {
-    src: '/images/sih-5.jpg',
-    phase: 'PHASE 05 // VICTORY PODIUM',
-    caption: 'National Winner Felicitation',
-    fallback: createPlaceholderDataUri('National Winner Felicitation', 'SIH // WINNER', '#14b8a6')
+    src: '/images/sih-final-presentation.jpg',
+    caption: 'Final Day Jury Presentation',
+    fallback: createPlaceholderDataUri('Final Day Jury Presentation', 'SIH // GRAND FINALE', '#14b8a6')
   },
   {
-    src: '/images/sih-6.jpg',
-    phase: 'PHASE 06 // NATIONAL CHAMPION',
-    caption: 'Hardware Edition Winner Trophy',
-    fallback: createPlaceholderDataUri('Hardware Edition Winner Trophy', 'SIH // AURA +999', '#0ea5e9')
+    src: '/images/sih-winning-group.jpg',
+    caption: 'Team AURA +999 Joint Winners',
+    fallback: createPlaceholderDataUri('Team AURA +999 Joint Winners', 'SIH // AURA +999', '#0ea5e9')
   }
 ];
 
 const competitiveHackathonItems = [
   {
-    src: '/images/hackathon-1.jpg',
-    tag: '01 // 24-HOUR ENGINEERING SPRINT',
+    src: '/images/advaya.jpg',
     caption: 'ADVAYA Hackathon 2025',
     subtitle: 'Rapid full-stack & IoT prototyping under competitive evaluation constraints.',
     spanClass: 'md:col-span-7',
     fallback: createPlaceholderDataUri('ADVAYA Hackathon 2025', '01 // NATIONAL HACKATHON', '#14b8a6')
   },
   {
-    src: '/images/hackathon-2.jpg',
-    tag: '02 // REGIONAL TECH QUIZ & ENGINEERING',
-    caption: 'TCS TechBytes 2025 - JSS Science and Technology University',
-    subtitle: 'Representing engineering excellence in competitive technical rounds at JSS STU, Mysuru.',
+    src: '/images/ideathon-2025.jpg',
+    caption: 'Ideathon - BGS Institute of Technology',
+    subtitle: 'Secured 1st Place representing our team in competitive technical prototyping.',
     spanClass: 'md:col-span-5',
-    fallback: createPlaceholderDataUri('TCS TechBytes 2025 - JSS STU', '02 // TCS TECHBYTES', '#0ea5e9')
+    fallback: createPlaceholderDataUri('Ideathon - BGS Institute of Technology', '02 // 1ST PLACE WINNER', '#0ea5e9')
   }
 ];
 
@@ -280,12 +272,12 @@ const Home = () => {
           animate="visible"
           className="max-w-5xl lg:max-w-6xl mx-auto px-6 text-center flex flex-col items-center"
         >
-          {/* 1. Profile Image (Preserving exact image rendering & grayscale hover effect) */}
+          {/* 1. Profile Image */}
           <MotionDiv variants={heroAvatarVariants}>
             <img 
               src={profilePic} 
               alt="Nazif" 
-              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
+              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl transition-all duration-500 mb-8"
             />
           </MotionDiv>
 
@@ -590,35 +582,34 @@ const Home = () => {
       </section>
 
       {/* Smart India Hackathon (SIH) Uncontained Fluid Marquee Section */}
-      <section className="py-16 md:py-24 overflow-hidden">
+      <section className="py-20 md:py-28 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 border-b border-zinc-200 dark:border-zinc-800/70 pb-8"
           >
-            <div>
-              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
-                <Trophy className="w-3.5 h-3.5" />
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-3">
+                <Trophy className="w-4 h-4" />
                 <span>04 // NATIONAL RECOGNITION</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
                 National Level Hackathon Winner: Smart India Hackathon (SIH)
               </h2>
             </div>
-            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-sm sm:text-base">
-              Snapshots from our 36-hour national finale sprint—engineering, calibrating, and pitching the Smart Blind Stick architecture with Team AURA +999.
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-base sm:text-lg leading-relaxed">
+              Snapshots from our 5-day national finale—engineering, calibrating, and pitching the Smart Blind Stick architecture with Team AURA +999.
             </p>
           </MotionDiv>
         </div>
 
         {/* Full-Width Uncontained Ticker Viewport with Soft Gradient Edge Masks */}
         <div
-          className="relative w-full py-4 select-none"
+          className="relative w-full py-4 select-none [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
           style={{
-            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
           }}
           onMouseEnter={() => setIsMarqueePaused(true)}
@@ -633,7 +624,7 @@ const Home = () => {
                 key={idx}
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-                className="group relative w-80 sm:w-96 md:w-[420px] aspect-[16/10] mr-6 shrink-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="group relative w-80 sm:w-96 md:w-[440px] aspect-[16/10] mr-6 shrink-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={item.src}
@@ -644,15 +635,13 @@ const Home = () => {
                       e.currentTarget.src = item.fallback;
                     }
                   }}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                 />
 
-                {/* Bottom Dark Translucent Pill Overlay */}
-                <div className="absolute bottom-3 inset-x-3 p-3.5 rounded-xl bg-zinc-950/70 backdrop-blur-md border border-white/10 text-white pointer-events-none transition-transform duration-300 group-hover:translate-y-[-2px]">
-                  <span className="block text-[10px] font-mono uppercase tracking-widest text-teal-300 mb-0.5">
-                    {item.phase}
-                  </span>
-                  <p className="text-sm sm:text-base font-semibold text-white truncate">
+                {/* Minimal Soft Bottom Gradient & Plain White Caption */}
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-3.5 left-4 right-4 pointer-events-none">
+                  <p className="text-sm sm:text-base font-medium text-white drop-shadow-md truncate">
                     {item.caption}
                   </p>
                 </div>
@@ -683,7 +672,7 @@ const Home = () => {
       </section>
 
       {/* Competitive Engineering & Hackathons Section */}
-      <section className="py-16 md:py-20">
+      <section className="py-14 md:py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
@@ -722,7 +711,7 @@ const Home = () => {
                 whileHover={{ y: -5 }}
                 className={`${item.spanClass} group bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 flex flex-col`}
               >
-                <div className="relative w-full h-64 sm:h-80 overflow-hidden bg-zinc-100 dark:bg-zinc-950">
+                <div className="relative w-full h-64 sm:h-72 overflow-hidden bg-zinc-100 dark:bg-zinc-950">
                   <img
                     src={item.src}
                     alt={item.caption}
@@ -732,16 +721,13 @@ const Home = () => {
                         e.currentTarget.src = item.fallback;
                       }
                     }}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
-                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-zinc-950/70 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-teal-300">
-                    {item.tag}
-                  </div>
                 </div>
 
                 <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
                   <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100 leading-snug mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100 leading-snug mb-1.5 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                       {item.caption}
                     </h3>
                     <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">

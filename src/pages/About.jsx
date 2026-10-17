@@ -27,7 +27,7 @@ const createPlaceholderDataUri = (label, sublabel, accentHex) => {
 
 const photoGalleryItems = [
   {
-    src: '/images/LabSafety_WorkingPrototype.jpg',
+    src: '/images/labsafety-working-prototype.jpg',
     alt: 'Hardware prototyping and embedded systems workbench',
     tag: '01 // THE METAL',
     caption: 'Embedded Systems & Sensor Fusion Lab',
@@ -36,7 +36,7 @@ const photoGalleryItems = [
     fallback: createPlaceholderDataUri('Embedded Hardware Workbench', '01 // THE METAL · ECE', '#14b8a6')
   },
   {
-    src: '/images/Nazif_Fromal_Image.png',
+    src: '/images/nazif-formal-image.png',
     alt: 'Full-stack engineering and AI workflow architecture',
     hideOverlay: true,
     spanClass: 'sm:col-span-1 aspect-[4/5]',
@@ -177,16 +177,16 @@ const About = () => {
                         e.currentTarget.src = photo.fallback;
                       }
                     }}
-                    className={`w-full h-full object-cover ${photo.positionClass || 'object-center'} rounded-xl grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out`}
+                    className={`w-full h-full object-cover ${photo.positionClass || 'object-center'} rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out`}
                   />
                   {!photo.hideOverlay && (
                     <>
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/15 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent pointer-events-none" />
                       <div className="absolute bottom-0 inset-x-0 p-3.5 pointer-events-none">
-                        <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300">
+                        <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300 drop-shadow-sm">
                           {photo.tag}
                         </span>
-                        <p className="text-xs sm:text-sm font-medium text-white truncate">
+                        <p className="text-xs sm:text-sm font-medium text-white drop-shadow-sm truncate">
                           {photo.caption}
                         </p>
                       </div>
