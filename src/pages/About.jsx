@@ -27,7 +27,7 @@ const createPlaceholderDataUri = (label, sublabel, accentHex) => {
 
 const photoGalleryItems = [
   {
-    src: '/images/about-1.jpg',
+    src: '/images/LabSafety_WorkingPrototype.jpg',
     alt: 'Hardware prototyping and embedded systems workbench',
     tag: '01 // THE METAL',
     caption: 'Embedded Systems & Sensor Fusion Lab',
@@ -35,15 +35,14 @@ const photoGalleryItems = [
     fallback: createPlaceholderDataUri('Embedded Hardware Workbench', '01 // THE METAL · ECE', '#14b8a6')
   },
   {
-    src: '/images/about-2.jpg',
+    src: '/images/Nazif_Fromal_Image.png',
     alt: 'Full-stack engineering and AI workflow architecture',
-    tag: '02 // FULL-STACK & AI',
-    caption: 'Gulf Infotech Engineering Setup',
+    hideOverlay: true,
     spanClass: 'sm:col-span-1 aspect-[4/5]',
     fallback: createPlaceholderDataUri('AI & Full-Stack Dev', '02 // GULF INFOTECH', '#0ea5e9')
   },
   {
-    src: '/images/about-3.jpg',
+    src: '/images/Assistive Mobility & IOT.png',
     alt: 'Smart India Hackathon and field testing prototypes',
     tag: '03 // FIELD TESTING',
     caption: 'Assistive Mobility & IoT Prototypes',
@@ -176,15 +175,19 @@ const About = () => {
                     }}
                     className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/15 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
-                  <div className="absolute bottom-0 inset-x-0 p-3.5 pointer-events-none">
-                    <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300">
-                      {photo.tag}
-                    </span>
-                    <p className="text-xs sm:text-sm font-medium text-white truncate">
-                      {photo.caption}
-                    </p>
-                  </div>
+                  {!photo.hideOverlay && (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-zinc-950/15 to-transparent opacity-80 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
+                      <div className="absolute bottom-0 inset-x-0 p-3.5 pointer-events-none">
+                        <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300">
+                          {photo.tag}
+                        </span>
+                        <p className="text-xs sm:text-sm font-medium text-white truncate">
+                          {photo.caption}
+                        </p>
+                      </div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>

@@ -14,10 +14,89 @@ import {
   Terminal,
   ArrowRight,
   Sparkles,
-  Layers
+  Layers,
+  Trophy,
+  Award
 } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 import profilePic from '../assets/Nazif_Fromal_Image.png';
+
+const createPlaceholderDataUri = (label, sublabel, accentHex) => {
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
+    <defs>
+      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#18181b" />
+        <stop offset="100%" stop-color="#09090b" />
+      </linearGradient>
+      <radialGradient id="glow" cx="75%" cy="25%" r="60%">
+        <stop offset="0%" stop-color="${accentHex}" stop-opacity="0.25" />
+        <stop offset="100%" stop-color="${accentHex}" stop-opacity="0" />
+      </radialGradient>
+      <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
+        <circle cx="2" cy="2" r="1" fill="#3f3f46" opacity="0.55" />
+      </pattern>
+    </defs>
+    <rect width="800" height="520" fill="url(#bg)" />
+    <rect width="800" height="520" fill="url(#glow)" />
+    <rect width="800" height="520" fill="url(#dots)" />
+    <rect x="36" y="36" width="728" height="448" rx="18" fill="none" stroke="#27272a" stroke-width="1.5" />
+    <text x="68" y="390" fill="${accentHex}" font-family="monospace" font-size="14" font-weight="600" letter-spacing="2">${sublabel}</text>
+    <text x="68" y="426" fill="#f4f4f5" font-family="sans-serif" font-size="24" font-weight="700">${label}</text>
+  </svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+};
+
+const sihMarqueeItems = [
+  {
+    src: '/images/sih-1.jpg',
+    phase: 'PHASE 01 // GRAND FINALE',
+    caption: 'Grand Finale Pitch - New Delhi',
+    fallback: createPlaceholderDataUri('Grand Finale Pitch - New Delhi', 'SIH // NATIONAL FINALE', '#14b8a6')
+  },
+  {
+    src: '/images/sih-2.jpg',
+    phase: 'PHASE 02 // FIELD VALIDATION',
+    caption: 'Team AURA +999 Prototype Testing',
+    fallback: createPlaceholderDataUri('Team AURA +999 Prototype Testing', 'SIH // FIELD EVALUATION', '#0ea5e9')
+  },
+  {
+    src: '/images/sih-3.jpg',
+    phase: 'PHASE 03 // EMBEDDED CORE',
+    caption: 'Hardware Integration',
+    fallback: createPlaceholderDataUri('Hardware Integration', 'SIH // SENSOR FUSION', '#14b8a6')
+  },
+  {
+    src: '/images/sih-4.jpg',
+    phase: 'PHASE 04 // HYBRID AI',
+    caption: 'Edge-to-Cloud Vision Calibration',
+    fallback: createPlaceholderDataUri('Edge-to-Cloud Vision Calibration', 'SIH // GEMINI + ONNX', '#38bdf8')
+  },
+  {
+    src: '/images/sih-5.jpg',
+    phase: 'PHASE 05 // VICTORY PODIUM',
+    caption: 'National Winner Felicitation',
+    fallback: createPlaceholderDataUri('National Winner Felicitation', 'SIH // WINNER', '#14b8a6')
+  }
+];
+
+const competitiveHackathonItems = [
+  {
+    src: '/images/hackathon-1.jpg',
+    tag: '01 // 24-HOUR ENGINEERING SPRINT',
+    caption: 'ADVAYA Hackathon 2025',
+    subtitle: 'Rapid full-stack & IoT prototyping under competitive evaluation constraints.',
+    spanClass: 'md:col-span-7 aspect-[16/10]',
+    fallback: createPlaceholderDataUri('ADVAYA Hackathon 2025', '01 // NATIONAL HACKATHON', '#14b8a6')
+  },
+  {
+    src: '/images/hackathon-2.jpg',
+    tag: '02 // REGIONAL TECH QUIZ & ENGINEERING',
+    caption: 'TCS TechBytes 2025 - JSS Science and Technology University',
+    subtitle: 'Representing engineering excellence in competitive technical rounds at JSS STU, Mysuru.',
+    spanClass: 'md:col-span-5 aspect-[16/10] md:aspect-auto md:h-full',
+    fallback: createPlaceholderDataUri('TCS TechBytes 2025 - JSS STU', '02 // TCS TECHBYTES', '#0ea5e9')
+  }
+];
 
 const EASE_OUT_EXPO = [0.22, 1, 0.36, 1];
 
@@ -485,6 +564,169 @@ const Home = () => {
                 link="/projects/final-year"
               />
             </MotionDiv>
+          </div>
+        </div>
+      </section>
+
+      {/* Smart India Hackathon (SIH) Marquee Section */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionDiv
+            variants={sectionHeaderVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
+                <Trophy className="w-3.5 h-3.5" />
+                <span>04 // National Recognition</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+                National Level Hackathon Winner: Smart India Hackathon (SIH)
+              </h2>
+            </div>
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-sm sm:text-base">
+              Snapshots from our 36-hour national finale sprint—engineering, calibrating, and pitching the Smart Blind Stick architecture with Team AURA +999.
+            </p>
+          </MotionDiv>
+
+          {/* Marquee Card Shell */}
+          <div className="relative rounded-2xl bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/50 p-4 sm:p-6 shadow-sm dark:shadow-none overflow-hidden">
+            {/* Subtle Left/Right Edge Fade Masks */}
+            <div
+              className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-white dark:from-zinc-950/90 to-transparent z-10"
+              aria-hidden="true"
+            />
+            <div
+              className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-white dark:from-zinc-950/90 to-transparent z-10"
+              aria-hidden="true"
+            />
+
+            <div className="overflow-hidden">
+              <MotionDiv
+                className="flex w-max"
+                animate={{ x: ['0%', '-50%'] }}
+                transition={{
+                  duration: 34,
+                  ease: 'linear',
+                  repeat: Infinity
+                }}
+              >
+                {[...sihMarqueeItems, ...sihMarqueeItems].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative w-72 sm:w-80 md:w-96 aspect-[16/10] mr-5 shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/70 bg-zinc-100 dark:bg-zinc-950/70 shadow-sm"
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.caption}
+                      loading="lazy"
+                      onError={(e) => {
+                        if (e.currentTarget.src !== item.fallback) {
+                          e.currentTarget.src = item.fallback;
+                        }
+                      }}
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
+                    <div className="absolute bottom-0 inset-x-0 p-4 pointer-events-none">
+                      <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300 mb-0.5">
+                        {item.phase}
+                      </span>
+                      <p className="text-sm sm:text-base font-semibold text-white truncate">
+                        {item.caption}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </MotionDiv>
+            </div>
+
+            {/* Prominent Hyperlink Below Marquee */}
+            <div className="mt-6 pt-5 border-t border-zinc-200 dark:border-zinc-800/70 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 dark:text-zinc-400">
+                <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+                <span>TEAM AURA +999 · HARDWARE EDITION WINNER</span>
+              </div>
+              <Link
+                to="/projects/sih"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm sm:text-base font-semibold bg-teal-500/10 hover:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30 hover:border-teal-500/50 transition-all duration-300 shadow-sm"
+              >
+                <span>Explore the Smart Blind Stick Architecture →</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive Engineering & Hackathons Section */}
+      <section className="py-16 md:py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <MotionDiv
+            variants={sectionHeaderVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-cyan-600 dark:text-cyan-400 mb-2">
+                <Award className="w-3.5 h-3.5" />
+                <span>05 // Arena &amp; Sprints</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+                Competitive Engineering &amp; Hackathons
+              </h2>
+            </div>
+            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-sm sm:text-base">
+              High-pressure technical arenas, 24-hour hardware-software buildathons, and inter-university engineering competitions.
+            </p>
+          </MotionDiv>
+
+          {/* Asymmetric Bento CSS Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+            {competitiveHackathonItems.map((item, idx) => (
+              <MotionDiv
+                key={idx}
+                initial={{ opacity: 0, y: 28, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.68,
+                  delay: idx * 0.14,
+                  ease: EASE_OUT_EXPO
+                }}
+                className={`${item.spanClass} bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-3 sm:p-4 shadow-sm dark:shadow-none hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 flex flex-col`}
+              >
+                <div className="group relative flex-1 w-full min-h-[260px] sm:min-h-[320px] overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-950/60">
+                  <img
+                    src={item.src}
+                    alt={item.caption}
+                    loading="lazy"
+                    onError={(e) => {
+                      if (e.currentTarget.src !== item.fallback) {
+                        e.currentTarget.src = item.fallback;
+                      }
+                    }}
+                    className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
+                  <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 pointer-events-none">
+                    <span className="block text-[10px] sm:text-xs font-mono uppercase tracking-wider text-teal-300 mb-1">
+                      {item.tag}
+                    </span>
+                    <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">
+                      {item.caption}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-zinc-300 mt-1 line-clamp-2">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </div>
+              </MotionDiv>
+            ))}
           </div>
         </div>
       </section>
