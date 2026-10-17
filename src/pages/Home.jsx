@@ -277,7 +277,7 @@ const Home = () => {
             <img 
               src={profilePic} 
               alt="Nazif" 
-              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl transition-all duration-500 mb-8"
+              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
             />
           </MotionDiv>
 
@@ -611,26 +611,26 @@ const Home = () => {
               <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                 Official National Organizers &amp; Backing
               </span>
-              <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl shadow-sm">
+              <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
                 <img
                   src="/logo/SIH_HardwareBranding.png"
                   alt="Smart India Hackathon Hardware Edition"
-                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain"
                 />
                 <img
                   src="/logo/Ministry of Education.png"
                   alt="Ministry of Education, Government of India"
-                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain"
                 />
                 <img
                   src="/logo/MoE.png"
                   alt="MoE's Innovation Cell"
-                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain"
                 />
                 <img
                   src="/logo/AICTE.png"
                   alt="AICTE"
-                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain"
                 />
               </div>
             </div>
