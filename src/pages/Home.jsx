@@ -611,26 +611,26 @@ const Home = () => {
               <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                 Official National Organizers &amp; Backing
               </span>
-              <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+              <div className="relative z-10 flex flex-wrap items-center justify-center gap-6 sm:gap-8 dark:before:absolute dark:before:inset-[-20px] dark:before:bg-white/5 dark:before:blur-2xl dark:before:rounded-full dark:before:-z-10">
                 <img
                   src="/logo/SIH_HardwareBranding.png"
                   alt="Smart India Hackathon Hardware Edition"
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain dark:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
                 />
                 <img
                   src="/logo/Ministry of Education.png"
                   alt="Ministry of Education, Government of India"
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain dark:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
                 />
                 <img
                   src="/logo/MoE.png"
                   alt="MoE's Innovation Cell"
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain dark:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
                 />
                 <img
                   src="/logo/AICTE.png"
                   alt="AICTE"
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  className="h-10 sm:h-12 w-auto object-contain dark:drop-shadow-[0_0_12px_rgba(255,255,255,0.6)]"
                 />
               </div>
             </div>
