@@ -32,6 +32,7 @@ const photoGalleryItems = [
     tag: '01 // THE METAL',
     caption: 'Embedded Systems & Sensor Fusion Lab',
     spanClass: 'sm:col-span-2 aspect-[16/10]',
+    positionClass: 'object-center',
     fallback: createPlaceholderDataUri('Embedded Hardware Workbench', '01 // THE METAL · ECE', '#14b8a6')
   },
   {
@@ -39,22 +40,25 @@ const photoGalleryItems = [
     alt: 'Full-stack engineering and AI workflow architecture',
     hideOverlay: true,
     spanClass: 'sm:col-span-1 aspect-[4/5]',
+    positionClass: 'object-top',
     fallback: createPlaceholderDataUri('AI & Full-Stack Dev', '02 // GULF INFOTECH', '#0ea5e9')
   },
   {
-    src: '/images/Assistive Mobility & IOT.png',
+    src: '/images/assistive-mobility.png',
     alt: 'Smart India Hackathon and field testing prototypes',
     tag: '03 // FIELD TESTING',
     caption: 'Assistive Mobility & IoT Prototypes',
     spanClass: 'sm:col-span-1 aspect-[4/5]',
+    positionClass: 'object-center',
     fallback: createPlaceholderDataUri('IoT Field Prototypes', '03 // EDGE TO CLOUD', '#14b8a6')
   },
   {
-    src: '/images/about-4.jpg',
+    src: '/images/discord-bot.png',
     alt: 'Discord bot architecture and community management',
     tag: '04 // BEYOND CODE',
     caption: 'Discord Bot Ops & Gaming Communities',
     spanClass: 'sm:col-span-2 aspect-[16/9]',
+    positionClass: 'object-center',
     fallback: createPlaceholderDataUri('Discord Bots & Community Ops', '04 // BEYOND THE CODE', '#38bdf8')
   }
 ];
@@ -167,13 +171,13 @@ const About = () => {
                   <img
                     src={photo.src}
                     alt={photo.alt}
-                    loading="lazy"
+                    loading="eager"
                     onError={(e) => {
                       if (e.currentTarget.src !== photo.fallback) {
                         e.currentTarget.src = photo.fallback;
                       }
                     }}
-                    className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                    className={`w-full h-full object-cover ${photo.positionClass || 'object-center'} rounded-xl grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out`}
                   />
                   {!photo.hideOverlay && (
                     <>

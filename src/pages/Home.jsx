@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, useAnimationFrame } from 'framer-motion';
 import {
   Cpu,
   Eye,
@@ -67,7 +68,7 @@ const sihMarqueeItems = [
   },
   {
     src: '/images/sih-4.jpg',
-    phase: 'PHASE 04 // HYBRID AI',
+    phase: 'PHASE 04 // JURY EVALUATION',
     caption: 'Edge-to-Cloud Vision Calibration',
     fallback: createPlaceholderDataUri('Edge-to-Cloud Vision Calibration', 'SIH // GEMINI + ONNX', '#38bdf8')
   },
@@ -76,6 +77,12 @@ const sihMarqueeItems = [
     phase: 'PHASE 05 // VICTORY PODIUM',
     caption: 'National Winner Felicitation',
     fallback: createPlaceholderDataUri('National Winner Felicitation', 'SIH // WINNER', '#14b8a6')
+  },
+  {
+    src: '/images/sih-6.jpg',
+    phase: 'PHASE 06 // NATIONAL CHAMPION',
+    caption: 'Hardware Edition Winner Trophy',
+    fallback: createPlaceholderDataUri('Hardware Edition Winner Trophy', 'SIH // AURA +999', '#0ea5e9')
   }
 ];
 
@@ -85,7 +92,7 @@ const competitiveHackathonItems = [
     tag: '01 // 24-HOUR ENGINEERING SPRINT',
     caption: 'ADVAYA Hackathon 2025',
     subtitle: 'Rapid full-stack & IoT prototyping under competitive evaluation constraints.',
-    spanClass: 'md:col-span-7 aspect-[16/10]',
+    spanClass: 'md:col-span-7',
     fallback: createPlaceholderDataUri('ADVAYA Hackathon 2025', '01 // NATIONAL HACKATHON', '#14b8a6')
   },
   {
@@ -93,7 +100,7 @@ const competitiveHackathonItems = [
     tag: '02 // REGIONAL TECH QUIZ & ENGINEERING',
     caption: 'TCS TechBytes 2025 - JSS Science and Technology University',
     subtitle: 'Representing engineering excellence in competitive technical rounds at JSS STU, Mysuru.',
-    spanClass: 'md:col-span-5 aspect-[16/10] md:aspect-auto md:h-full',
+    spanClass: 'md:col-span-5',
     fallback: createPlaceholderDataUri('TCS TechBytes 2025 - JSS STU', '02 // TCS TECHBYTES', '#0ea5e9')
   }
 ];
@@ -174,6 +181,20 @@ const Home = () => {
   const MotionH1 = motion.h1;
   const MotionH2 = motion.h2;
   const MotionP = motion.p;
+
+  const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+  const marqueeX = useMotionValue(0);
+  const marqueeTransform = useTransform(marqueeX, (val) => `${val}%`);
+
+  useAnimationFrame((_, delta) => {
+    if (isMarqueePaused) return;
+    const step = (delta / 1000) * 1.35;
+    let next = marqueeX.get() - step;
+    if (next <= -50) {
+      next += 50;
+    }
+    marqueeX.set(next);
+  });
 
   const valuePropositions = [
     {
@@ -568,20 +589,20 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Smart India Hackathon (SIH) Marquee Section */}
-      <section className="py-16 md:py-20">
+      {/* Smart India Hackathon (SIH) Uncontained Fluid Marquee Section */}
+      <section className="py-16 md:py-24 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
+            className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 border-b border-zinc-200 dark:border-zinc-800/70 pb-6"
           >
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
                 <Trophy className="w-3.5 h-3.5" />
-                <span>04 // National Recognition</span>
+                <span>04 // NATIONAL RECOGNITION</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 National Level Hackathon Winner: Smart India Hackathon (SIH)
@@ -591,73 +612,73 @@ const Home = () => {
               Snapshots from our 36-hour national finale sprint—engineering, calibrating, and pitching the Smart Blind Stick architecture with Team AURA +999.
             </p>
           </MotionDiv>
+        </div>
 
-          {/* Marquee Card Shell */}
-          <div className="relative rounded-2xl bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/50 p-4 sm:p-6 shadow-sm dark:shadow-none overflow-hidden">
-            {/* Subtle Left/Right Edge Fade Masks */}
-            <div
-              className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 bg-gradient-to-r from-white dark:from-zinc-950/90 to-transparent z-10"
-              aria-hidden="true"
-            />
-            <div
-              className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 bg-gradient-to-l from-white dark:from-zinc-950/90 to-transparent z-10"
-              aria-hidden="true"
-            />
-
-            <div className="overflow-hidden">
+        {/* Full-Width Uncontained Ticker Viewport with Soft Gradient Edge Masks */}
+        <div
+          className="relative w-full py-4 select-none"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+          }}
+          onMouseEnter={() => setIsMarqueePaused(true)}
+          onMouseLeave={() => setIsMarqueePaused(false)}
+        >
+          <MotionDiv
+            className="flex w-max"
+            style={{ x: marqueeTransform }}
+          >
+            {[...sihMarqueeItems, ...sihMarqueeItems].map((item, idx) => (
               <MotionDiv
-                className="flex w-max"
-                animate={{ x: ['0%', '-50%'] }}
-                transition={{
-                  duration: 34,
-                  ease: 'linear',
-                  repeat: Infinity
-                }}
+                key={idx}
+                whileHover={{ y: -6, scale: 1.02 }}
+                transition={{ type: 'spring', stiffness: 280, damping: 22 }}
+                className="group relative w-80 sm:w-96 md:w-[420px] aspect-[16/10] mr-6 shrink-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300"
               >
-                {[...sihMarqueeItems, ...sihMarqueeItems].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="group relative w-72 sm:w-80 md:w-96 aspect-[16/10] mr-5 shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/70 bg-zinc-100 dark:bg-zinc-950/70 shadow-sm"
-                  >
-                    <img
-                      src={item.src}
-                      alt={item.caption}
-                      loading="lazy"
-                      onError={(e) => {
-                        if (e.currentTarget.src !== item.fallback) {
-                          e.currentTarget.src = item.fallback;
-                        }
-                      }}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
-                    <div className="absolute bottom-0 inset-x-0 p-4 pointer-events-none">
-                      <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300 mb-0.5">
-                        {item.phase}
-                      </span>
-                      <p className="text-sm sm:text-base font-semibold text-white truncate">
-                        {item.caption}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </MotionDiv>
-            </div>
+                <img
+                  src={item.src}
+                  alt={item.caption}
+                  loading="eager"
+                  onError={(e) => {
+                    if (e.currentTarget.src !== item.fallback) {
+                      e.currentTarget.src = item.fallback;
+                    }
+                  }}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                />
 
-            {/* Prominent Hyperlink Below Marquee */}
-            <div className="mt-6 pt-5 border-t border-zinc-200 dark:border-zinc-800/70 flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-                <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-                <span>TEAM AURA +999 · HARDWARE EDITION WINNER</span>
-              </div>
-              <Link
-                to="/projects/sih"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm sm:text-base font-semibold bg-teal-500/10 hover:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30 hover:border-teal-500/50 transition-all duration-300 shadow-sm"
-              >
-                <span>Explore the Smart Blind Stick Architecture →</span>
-              </Link>
-            </div>
+                {/* Bottom Dark Translucent Pill Overlay */}
+                <div className="absolute bottom-3 inset-x-3 p-3.5 rounded-xl bg-zinc-950/70 backdrop-blur-md border border-white/10 text-white pointer-events-none transition-transform duration-300 group-hover:translate-y-[-2px]">
+                  <span className="block text-[10px] font-mono uppercase tracking-widest text-teal-300 mb-0.5">
+                    {item.phase}
+                  </span>
+                  <p className="text-sm sm:text-base font-semibold text-white truncate">
+                    {item.caption}
+                  </p>
+                </div>
+              </MotionDiv>
+            ))}
+          </MotionDiv>
+        </div>
+
+        {/* Standalone Interactive CTA Pill Below Marquee */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 dark:text-zinc-400">
+            <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+            <span>TEAM AURA +999 · HARDWARE EDITION WINNER</span>
           </div>
+          <MotionDiv
+            whileHover={{ y: -2, scale: 1.015 }}
+            whileTap={{ scale: 0.985 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+          >
+            <Link
+              to="/projects/sih"
+              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700/80 hover:border-teal-500 dark:hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm hover:shadow-md transition-all duration-300"
+            >
+              <span>Explore the Smart Blind Stick Architecture →</span>
+            </Link>
+          </MotionDiv>
         </div>
       </section>
 
@@ -685,42 +706,45 @@ const Home = () => {
             </p>
           </MotionDiv>
 
-          {/* Asymmetric Bento CSS Grid */}
+          {/* Clean Asymmetric Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
             {competitiveHackathonItems.map((item, idx) => (
               <MotionDiv
                 key={idx}
-                initial={{ opacity: 0, y: 28, scale: 0.98 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
-                  duration: 0.68,
-                  delay: idx * 0.14,
+                  duration: 0.6,
+                  delay: idx * 0.12,
                   ease: EASE_OUT_EXPO
                 }}
-                className={`${item.spanClass} bg-white dark:bg-zinc-900/50 border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-3 sm:p-4 shadow-sm dark:shadow-none hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 flex flex-col`}
+                whileHover={{ y: -5 }}
+                className={`${item.spanClass} group bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 rounded-2xl overflow-hidden shadow-sm transition-all duration-300 flex flex-col`}
               >
-                <div className="group relative flex-1 w-full min-h-[260px] sm:min-h-[320px] overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-950/60">
+                <div className="relative w-full h-64 sm:h-80 overflow-hidden bg-zinc-100 dark:bg-zinc-950">
                   <img
                     src={item.src}
                     alt={item.caption}
-                    loading="lazy"
+                    loading="eager"
                     onError={(e) => {
                       if (e.currentTarget.src !== item.fallback) {
                         e.currentTarget.src = item.fallback;
                       }
                     }}
-                    className="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none" />
-                  <div className="absolute bottom-0 inset-x-0 p-4 sm:p-5 pointer-events-none">
-                    <span className="block text-[10px] sm:text-xs font-mono uppercase tracking-wider text-teal-300 mb-1">
-                      {item.tag}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">
+                  <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-zinc-950/70 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-teal-300">
+                    {item.tag}
+                  </div>
+                </div>
+
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-1">
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100 leading-snug mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                       {item.caption}
                     </h3>
-                    <p className="text-xs sm:text-sm text-zinc-300 mt-1 line-clamp-2">
+                    <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
                       {item.subtitle}
                     </p>
                   </div>
