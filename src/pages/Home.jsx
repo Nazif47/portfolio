@@ -611,26 +611,26 @@ const Home = () => {
               <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
                 Official National Organizers &amp; Backing
               </span>
-              <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+              <div className="inline-flex flex-wrap items-center justify-center gap-6 bg-white/95 backdrop-blur-sm px-6 py-4 rounded-2xl shadow-sm">
                 <img
                   src="/logo/SIH_HardwareBranding.png"
                   alt="Smart India Hackathon Hardware Edition"
-                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
                 />
                 <img
                   src="/logo/Ministry of Education.png"
                   alt="Ministry of Education, Government of India"
-                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
                 />
                 <img
                   src="/logo/MoE.png"
                   alt="MoE's Innovation Cell"
-                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
                 />
                 <img
                   src="/logo/AICTE.png"
                   alt="AICTE"
-                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300"
                 />
               </div>
             </div>

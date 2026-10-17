@@ -30,22 +30,19 @@ const photoGalleryItems = [
   {
     src: '/images/labsafety-working-prototype.jpg',
     alt: 'Hardware prototyping and embedded systems workbench',
-    spanClass: 'col-span-2 h-64',
-    fitClass: 'object-cover object-[50%_75%]',
+    caption: 'Embedded Systems & Sensor Fusion Lab',
     fallback: createPlaceholderDataUri('Embedded Hardware Workbench', 'ECE · HARDWARE LAB', '#14b8a6')
   },
   {
     src: '/images/nazif-formal-image.png',
     alt: 'Full-stack engineering and AI workflow architecture',
-    spanClass: 'col-span-1 h-64',
-    fitClass: 'object-cover object-top',
+    caption: 'Nazif Gangawali',
     fallback: createPlaceholderDataUri('AI & Full-Stack Dev', 'GULF INFOTECH', '#0ea5e9')
   },
   {
     src: '/images/assistive-mobility.png',
     alt: 'Smart India Hackathon and field testing prototypes',
-    spanClass: 'col-span-1 h-64',
-    fitClass: 'object-contain p-3',
+    caption: 'Assistive Mobility Hardware Prototype',
     fallback: createPlaceholderDataUri('IoT Field Prototypes', 'EDGE TO CLOUD', '#14b8a6')
   }
 ];
@@ -162,11 +159,11 @@ const About = () => {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="columns-1 sm:columns-2 gap-4 space-y-4">
               {photoGalleryItems.map((photo, index) => (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-800/50 shadow-sm ${photo.spanClass}`}
+                  className="relative overflow-hidden group break-inside-avoid rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-800/50 shadow-sm"
                 >
                   <img
                     src={photo.src}
@@ -177,13 +174,18 @@ const About = () => {
                         e.currentTarget.src = photo.fallback;
                       }
                     }}
-                    className={`w-full h-full ${photo.fitClass} rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out`}
+                    className="w-full h-auto object-cover rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
+                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none">
+                    <p className="text-sm font-medium text-white shadow-sm">
+                      {photo.caption}
+                    </p>
+                  </div>
                 </div>
               ))}
 
               {/* Frame 4: Official Discord Branding Card */}
-              <div className="group relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-800/50 shadow-sm col-span-2 h-48 flex flex-col items-center justify-center p-6 text-center">
+              <div className="group relative overflow-hidden break-inside-avoid rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-800/50 shadow-sm h-48 flex flex-col items-center justify-center p-6 text-center">
                 <svg
                   viewBox="0 0 127.14 96.36"
                   fill="currentColor"
