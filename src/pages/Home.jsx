@@ -589,20 +589,51 @@ const Home = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6 border-b border-zinc-200 dark:border-zinc-800/70 pb-8"
+            className="mb-12 border-b border-zinc-200 dark:border-zinc-800/70 pb-8"
           >
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-3">
-                <Trophy className="w-4 h-4" />
-                <span>04 // NATIONAL RECOGNITION</span>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-3">
+                  <Trophy className="w-4 h-4" />
+                  <span>04 // NATIONAL RECOGNITION</span>
+                </div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                  National Level Hackathon Winner: Smart India Hackathon (SIH)
+                </h2>
               </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
-                National Level Hackathon Winner: Smart India Hackathon (SIH)
-              </h2>
+              <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-base sm:text-lg leading-relaxed">
+                Snapshots from our 5-day national finale—engineering, calibrating, and pitching the Smart Blind Stick architecture with Team AURA +999.
+              </p>
             </div>
-            <p className="text-zinc-600 dark:text-zinc-400 max-w-md text-base sm:text-lg leading-relaxed">
-              Snapshots from our 5-day national finale—engineering, calibrating, and pitching the Smart Blind Stick architecture with Team AURA +999.
-            </p>
+
+            {/* Official SIH Partner & Organizer Branding Logo Strip */}
+            <div className="mt-7 pt-6 border-t border-zinc-200/70 dark:border-zinc-800/50 flex flex-wrap items-center justify-between gap-6">
+              <span className="text-[11px] font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
+                Official National Organizers &amp; Backing
+              </span>
+              <div className="flex flex-wrap items-center gap-6 sm:gap-8">
+                <img
+                  src="/logo/SIH_HardwareBranding.png"
+                  alt="Smart India Hackathon Hardware Edition"
+                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src="/logo/Ministry of Education.png"
+                  alt="Ministry of Education, Government of India"
+                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src="/logo/MoE.png"
+                  alt="MoE's Innovation Cell"
+                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+                <img
+                  src="/logo/AICTE.png"
+                  alt="AICTE"
+                  className="h-10 sm:h-12 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            </div>
           </MotionDiv>
         </div>
 

@@ -29,37 +29,23 @@ const photoGalleryItems = [
   {
     src: '/images/labsafety-working-prototype.jpg',
     alt: 'Hardware prototyping and embedded systems workbench',
-    tag: '01 // THE METAL',
-    caption: 'Embedded Systems & Sensor Fusion Lab',
     spanClass: 'sm:col-span-2 aspect-[16/10]',
-    positionClass: 'object-center',
+    fitClass: 'object-contain p-2',
     fallback: createPlaceholderDataUri('Embedded Hardware Workbench', '01 // THE METAL · ECE', '#14b8a6')
   },
   {
     src: '/images/nazif-formal-image.png',
     alt: 'Full-stack engineering and AI workflow architecture',
-    hideOverlay: true,
     spanClass: 'sm:col-span-1 aspect-[4/5]',
-    positionClass: 'object-top',
+    fitClass: 'object-cover object-top',
     fallback: createPlaceholderDataUri('AI & Full-Stack Dev', '02 // GULF INFOTECH', '#0ea5e9')
   },
   {
     src: '/images/assistive-mobility.png',
     alt: 'Smart India Hackathon and field testing prototypes',
-    tag: '03 // FIELD TESTING',
-    caption: 'Assistive Mobility & IoT Prototypes',
     spanClass: 'sm:col-span-1 aspect-[4/5]',
-    positionClass: 'object-center',
+    fitClass: 'object-contain p-2',
     fallback: createPlaceholderDataUri('IoT Field Prototypes', '03 // EDGE TO CLOUD', '#14b8a6')
-  },
-  {
-    src: '/images/discord-bot.png',
-    alt: 'Discord bot architecture and community management',
-    tag: '04 // BEYOND CODE',
-    caption: 'Discord Bot Ops & Gaming Communities',
-    spanClass: 'sm:col-span-2 aspect-[16/9]',
-    positionClass: 'object-center',
-    fallback: createPlaceholderDataUri('Discord Bots & Community Ops', '04 // BEYOND THE CODE', '#38bdf8')
   }
 ];
 
@@ -166,7 +152,7 @@ const About = () => {
               {photoGalleryItems.map((photo, index) => (
                 <div
                   key={index}
-                  className={`group relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-950/60 shadow-sm ${photo.spanClass}`}
+                  className={`group relative overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800/60 bg-zinc-100 dark:bg-zinc-800/50 shadow-sm ${photo.spanClass}`}
                 >
                   <img
                     src={photo.src}
@@ -177,23 +163,29 @@ const About = () => {
                         e.currentTarget.src = photo.fallback;
                       }
                     }}
-                    className={`w-full h-full object-cover ${photo.positionClass || 'object-center'} rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out`}
+                    className={`w-full h-full ${photo.fitClass} rounded-xl group-hover:scale-105 transition-transform duration-500 ease-out`}
                   />
-                  {!photo.hideOverlay && (
-                    <>
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/70 via-transparent to-transparent pointer-events-none" />
-                      <div className="absolute bottom-0 inset-x-0 p-3.5 pointer-events-none">
-                        <span className="block text-[10px] font-mono uppercase tracking-wider text-teal-300 drop-shadow-sm">
-                          {photo.tag}
-                        </span>
-                        <p className="text-xs sm:text-sm font-medium text-white drop-shadow-sm truncate">
-                          {photo.caption}
-                        </p>
-                      </div>
-                    </>
-                  )}
                 </div>
               ))}
+
+              {/* Frame 4: Official Discord Branding Card */}
+              <div className="group relative overflow-hidden rounded-xl border border-indigo-500/30 dark:border-indigo-500/20 bg-gradient-to-br from-[#5865F2] via-[#4752C4] to-zinc-950 shadow-sm sm:col-span-2 aspect-[16/9] flex flex-col items-center justify-center p-6 text-center">
+                <div
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.16),transparent_65%)]"
+                  aria-hidden="true"
+                />
+                <svg
+                  viewBox="0 0 127.14 96.36"
+                  fill="currentColor"
+                  aria-label="Discord Official Logo"
+                  className="relative z-10 w-20 h-20 sm:w-24 sm:h-24 text-white drop-shadow-lg group-hover:scale-110 transition-transform duration-500 ease-out"
+                >
+                  <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z" />
+                </svg>
+                <span className="relative z-10 mt-3 text-xs sm:text-sm font-mono tracking-wide text-indigo-100/95">
+                  Discord API &amp; Community Operations
+                </span>
+              </div>
             </div>
           </div>
         </div>
