@@ -42,7 +42,7 @@ const Contact = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-zinc-200 focus:border-zinc-500 focus:ring-0 focus-visible:ring-2 focus-visible:ring-teal-500/40 rounded-lg px-4 py-3 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600 outline-none"
-                  placeholder="John Doe"
+                  placeholder="Your Full Name"
                 />
               </div>
               <div>
@@ -53,7 +53,7 @@ const Contact = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-zinc-200 focus:border-zinc-500 focus:ring-0 focus-visible:ring-2 focus-visible:ring-teal-500/40 rounded-lg px-4 py-3 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600 outline-none"
-                  placeholder="john@example.com"
+                  placeholder="you@company.com"
                 />
               </div>
               <div>
