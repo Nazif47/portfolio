@@ -15,6 +15,7 @@ import {
   Zap,
   ArrowUpRight
 } from 'lucide-react';
+import BotWorkflowFlowchart from '../../components/BotWorkflowFlowchart';
 
 const techStack = [
   { name: 'Node.js', category: 'Event Runtime', icon: Server },
@@ -23,6 +24,58 @@ const techStack = [
   { name: 'Google Cloud Storage', category: 'Private Cloud Storage', icon: Cloud },
   { name: 'Firebase Admin', category: 'Service Auth & Buckets', icon: ShieldCheck },
   { name: 'Node-Cron', category: 'Scheduled Daemons', icon: Clock }
+];
+
+const serverOpsCommands = [
+  {
+    command: '/build_embed',
+    args: '[channel] [preset]',
+    permissions: 'Administrator / Staff',
+    subsystem: 'UI State Loop',
+    summary: 'Interactive modal loop with live preview and color presets.'
+  },
+  {
+    command: '/stick',
+    args: '<message_id> [channel]',
+    permissions: 'Manage Messages',
+    subsystem: 'Debounce Daemon',
+    summary: 'Clones target messages into a 2.5s debounced sticky message daemon.'
+  },
+  {
+    command: '/audit-members',
+    args: '[sync_mode]',
+    permissions: 'Server Operations',
+    subsystem: 'REST Reconciler',
+    summary: 'Cross-references Discord roles against live REST API rosters.'
+  },
+  {
+    command: '/status',
+    args: '--verbose',
+    permissions: 'System Operator',
+    subsystem: 'Host Telemetry',
+    summary: 'Reports process heap RAM usage, host OS RAM utilization, and WebSocket ping.'
+  },
+  {
+    command: '/db-status',
+    args: '--ping',
+    permissions: 'System Operator',
+    subsystem: 'Mongoose Probe',
+    summary: 'Checks Mongoose readyState and measures round-trip latency.'
+  },
+  {
+    command: '/export-links',
+    args: '[format: csv]',
+    permissions: 'Administrator',
+    subsystem: 'Data Pipeline',
+    summary: 'Generates and exports a downloadable CSV of mapped accounts.'
+  },
+  {
+    command: '/ticket-add & /ticket-remove',
+    args: '<target_member>',
+    permissions: 'Ticket Moderator',
+    subsystem: 'Bitflag ACL',
+    summary: 'Modifies stateless guest permission bitflags in active tickets.'
+  }
 ];
 
 const DiscordBot = () => {
@@ -108,7 +161,7 @@ const DiscordBot = () => {
         <section className="mb-14">
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400">
-              01 // CORE INFRASTRUCTURE STACK
+              CORE INFRASTRUCTURE STACK
             </span>
             <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
               Production Runtime
@@ -140,11 +193,11 @@ const DiscordBot = () => {
           </div>
         </section>
 
-        {/* Bento Grid - Core Features */}
+        {/* 01 // Architecture Bento Grid - Core Features */}
         <section className="mb-16">
           <div className="mb-8">
             <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 block mb-2">
-              02 // SYSTEM ARCHITECTURE &amp; SUBSYSTEMS
+              01 // SYSTEM ARCHITECTURE &amp; SUBSYSTEMS
             </span>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
               Engineering Highlights
@@ -294,6 +347,113 @@ const DiscordBot = () => {
                 <span>STATE: CHANNEL BITFLAGS</span>
                 <span>LATENCY: O(1) LOCAL</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 02 // CLOUD ARCHIVING WORKFLOW (Archify Interactive Flowchart) */}
+        <section className="mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 block mb-2">
+                02 // CLOUD ARCHIVING WORKFLOW
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                Multi-Tiered Ticket &amp; Cloud Archiving Workflow
+              </h2>
+            </div>
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md">
+              End-to-end execution trace from stateless channel bitflag tagging to in-memory HTML hydration and private cloud bucket streaming.
+            </p>
+          </div>
+
+          <BotWorkflowFlowchart />
+        </section>
+
+        {/* 03 // SERVER OPS & DEV DAEMONS */}
+        <section className="mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 block mb-2">
+                03 // SERVER OPS &amp; DEV DAEMONS
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+                Infrastructure &amp; Diagnostics Command Index
+              </h2>
+            </div>
+            <span className="text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              7 Core Utility Endpoints · Slash Command Registry
+            </span>
+          </div>
+
+          {/* Terminal-Inspired Data Table Container */}
+          <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/60 backdrop-blur-md shadow-sm">
+            {/* Terminal Window Header Bar */}
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-zinc-100/90 dark:bg-zinc-950/90 border-b border-zinc-200 dark:border-zinc-800/80">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                <span className="ml-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+                  internal-discord-node://commands/ops-daemons
+                </span>
+              </div>
+              <span className="hidden sm:inline-block text-[11px] font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                REST v14 · Slash Registry
+              </span>
+            </div>
+
+            {/* Desktop Table Header */}
+            <div className="hidden md:grid md:grid-cols-12 gap-4 px-6 py-3 text-[11px] font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 border-b border-zinc-200/80 dark:border-zinc-800/70 bg-zinc-50/60 dark:bg-zinc-900/40">
+              <div className="col-span-3">Command &amp; Signature</div>
+              <div className="col-span-2">Subsystem</div>
+              <div className="col-span-2">RBAC Scope</div>
+              <div className="col-span-5">Execution Summary</div>
+            </div>
+
+            {/* Command Rows (Stacks cleanly on mobile, 12-col table on desktop) */}
+            <div className="divide-y divide-zinc-200/70 dark:divide-zinc-800/60">
+              {serverOpsCommands.map((item) => (
+                <div
+                  key={item.command}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 px-4 sm:px-6 py-4 hover:bg-zinc-50/80 dark:hover:bg-zinc-800/30 transition-colors items-start md:items-center"
+                >
+                  {/* Command Name & Arguments */}
+                  <div className="md:col-span-3 flex flex-col">
+                    <code className="font-mono text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                      {item.command}
+                    </code>
+                    <span className="font-mono text-[11px] text-zinc-500 dark:text-zinc-500 mt-0.5">
+                      {item.args}
+                    </span>
+                  </div>
+
+                  {/* Subsystem Pill */}
+                  <div className="md:col-span-2 flex items-center gap-2 mt-1 md:mt-0">
+                    <span className="md:hidden text-[11px] font-mono uppercase text-zinc-400">
+                      Subsystem:
+                    </span>
+                    <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-100 dark:bg-zinc-800/90 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/70">
+                      {item.subsystem}
+                    </span>
+                  </div>
+
+                  {/* Permissions */}
+                  <div className="md:col-span-2 flex items-center gap-2">
+                    <span className="md:hidden text-[11px] font-mono uppercase text-zinc-400">
+                      Scope:
+                    </span>
+                    <span className="text-xs font-mono text-zinc-600 dark:text-zinc-400">
+                      {item.permissions}
+                    </span>
+                  </div>
+
+                  {/* Execution Summary */}
+                  <div className="md:col-span-5 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed mt-1 md:mt-0">
+                    {item.summary}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
