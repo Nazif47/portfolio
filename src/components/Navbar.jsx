@@ -24,7 +24,7 @@ const Navbar = () => {
               to="/"
               className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 transition-colors"
             >
-              Portfolio
+              Nazif.
             </NavLink>
           </div>
           
