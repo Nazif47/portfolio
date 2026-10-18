@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -1458,9 +1459,9 @@ const SIHProject = () => {
       </div>
 
       {/* In-Page Demo Video Modal */}
-      {isVideoOpen && (
+      {isVideoOpen && typeof document !== 'undefined' && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-6"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-6"
           onClick={() => setIsVideoOpen(false)}
           role="dialog"
           aria-modal="true"
@@ -1488,7 +1489,8 @@ const SIHProject = () => {
               className="w-full h-auto max-h-[85vh] rounded-xl"
             ></video>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

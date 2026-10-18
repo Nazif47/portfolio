@@ -90,7 +90,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-200">GitHub</h3>
-                  <p className="text-zinc-500 text-sm">Check out my repositories</p>
+                  <p className="text-zinc-500 text-sm">Check out my repositories.</p>
                 </div>
               </div>
             </a>
@@ -107,7 +107,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-200">LinkedIn</h3>
-                  <p className="text-zinc-500 text-sm">Connect with me professionally</p>
+                  <p className="text-zinc-500 text-sm">Connect with me professionally.</p>
                 </div>
               </div>
             </a>
@@ -122,7 +122,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-medium text-zinc-900 dark:text-zinc-200">Email</h3>
-                  <p className="text-zinc-500 text-sm">Send me a direct email</p>
+                  <p className="text-zinc-500 text-sm">Send me a direct email.</p>
                 </div>
               </div>
             </a>

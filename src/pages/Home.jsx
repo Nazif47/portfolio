@@ -61,7 +61,7 @@ const competitiveHackathonItems = [
   {
     src: '/images/advaya.jpg',
     caption: 'ADVAYA Hackathon 2025',
-    subtitle: 'Developed "Un-mute" A health literacy app for young adults',
+    subtitle: 'Developed "Un-mute", a health literacy app for young adults.',
     spanClass: 'md:col-span-7',
     fallback: createPlaceholderDataUri('ADVAYA Hackathon 2025', '01 // NATIONAL HACKATHON', '#14b8a6')
   },
