@@ -242,12 +242,12 @@ const Home = () => {
   return (
     <div className="flex flex-col flex-grow w-full pt-16 overflow-x-hidden">
       {/* Hero Section (Clean, Unboxed Centered Stack) */}
-      <section className="min-h-[85dvh] flex flex-col justify-center items-center py-12 md:py-20">
+      <section className="w-full min-h-[85dvh] flex flex-col justify-center items-center py-12 md:py-20">
         <MotionDiv
           variants={heroContainerVariants}
           initial="hidden"
           animate="visible"
-          className="w-full max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center"
+          className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center"
         >
           {/* 1. Profile Image */}
           <MotionDiv variants={heroAvatarVariants}>
@@ -319,8 +319,8 @@ const Home = () => {
       </section>
 
       {/* What I Build Section (Value Proposition) */}
-      <section className="py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-16 md:py-20">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"
@@ -405,8 +405,8 @@ const Home = () => {
       </section>
 
       {/* Core Technologies Section */}
-      <section className="py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-16 md:py-20">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"
@@ -492,8 +492,8 @@ const Home = () => {
       </section>
 
       {/* Featured Highlights Section */}
-      <section className="py-16 md:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-16 md:py-20">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"
@@ -562,8 +562,8 @@ const Home = () => {
       </section>
 
       {/* Smart India Hackathon (SIH) Uncontained Fluid Marquee Section */}
-      <section className="py-20 md:py-28 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-20 md:py-28 overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"
@@ -674,7 +674,7 @@ const Home = () => {
         </div>
 
         {/* Standalone Interactive CTA Pill Below Marquee */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 dark:text-zinc-400 text-center sm:text-left">
             <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shrink-0" />
             <span>TEAM AURA +999 · HARDWARE EDITION WINNER</span>
@@ -696,8 +696,8 @@ const Home = () => {
       </section>
 
       {/* Competitive Engineering & Hackathons Section */}
-      <section className="py-14 md:py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="w-full py-14 md:py-16">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}
             initial="hidden"

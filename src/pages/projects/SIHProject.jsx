@@ -1062,8 +1062,8 @@ const SIHProject = () => {
   };
 
   return (
-    <div className="pt-24 pb-20 min-h-[100dvh]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="w-full pt-24 pb-20 min-h-[100dvh]">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
           <Link

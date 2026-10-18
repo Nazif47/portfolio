@@ -51,7 +51,7 @@ const PageTransition = ({ children }) => {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="flex flex-col flex-grow will-change-transform"
+      className="w-full flex flex-col flex-grow will-change-transform"
     >
       {children}
     </MotionContainer>
@@ -66,7 +66,7 @@ const AnimatedRoutes = () => {
   }, [location.pathname]);
 
   return (
-    <Suspense fallback={<div className="flex-grow min-h-[60dvh]" aria-hidden="true" />}>
+    <Suspense fallback={<div className="w-full flex-grow min-h-[60dvh]" aria-hidden="true" />}>
       <AnimatePresence mode="wait" initial={false}>
         <Routes location={location} key={location.pathname}>
           <Route
@@ -146,10 +146,10 @@ const AnimatedRoutes = () => {
 export default function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-[100dvh] w-full bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 relative overflow-x-hidden px-safe transition-colors duration-500">
+      <div className="w-full min-h-screen flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 relative overflow-x-hidden transition-colors duration-500">
         <AtmosphericBackground />
         <Navbar />
-        <main className="relative z-10 flex flex-col flex-grow w-full bg-transparent text-zinc-900 dark:text-zinc-100 transition-colors duration-500">
+        <main className="w-full min-h-screen flex flex-col flex-grow relative z-10 bg-transparent text-zinc-900 dark:text-zinc-100 transition-colors duration-500">
           <AnimatedRoutes />
         </main>
         <Footer />
