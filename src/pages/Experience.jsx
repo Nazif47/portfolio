@@ -148,7 +148,7 @@ const Experience = () => {
               <X className="w-5 h-5" aria-hidden="true" />
             </button>
             <iframe
-              src="/Nazif_Internship_Certificate.pdf"
+              src="/Nazif_Internship_Certificate.pdf#toolbar=0"
               className="w-full h-full border-0"
               title="Internship Certificate"
             />
