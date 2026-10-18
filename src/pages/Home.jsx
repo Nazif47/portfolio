@@ -198,10 +198,10 @@ const Home = () => {
       category: 'Frontend & App',
       icon: Layout,
       skills: [
-        { name: 'React', meta: 'UI Architecture' },
-        { name: 'Tailwind CSS', meta: 'Design System' },
-        { name: 'Vite', meta: 'Build Toolchain' },
-        { name: 'Flutter', meta: 'Mobile Companion' }
+        { name: 'React', meta: 'UI Component Architecture' },
+        { name: 'Tailwind CSS', meta: 'Utility-First Design System' },
+        { name: 'Vite', meta: 'High-Performance Bundler' },
+        { name: 'Flutter', meta: 'Cross-Platform Mobile' }
       ]
     },
     {
@@ -209,10 +209,10 @@ const Home = () => {
       category: 'Backend & AI',
       icon: Database,
       skills: [
-        { name: 'Node.js', meta: 'Event Runtime' },
-        { name: 'Express', meta: 'API Layer' },
+        { name: 'Node.js', meta: 'Event-Driven Runtime' },
+        { name: 'Express', meta: 'RESTful API Layer' },
         { name: 'Python', meta: 'Automation & Daemons' },
-        { name: 'Google Gemini API', meta: 'Multimodal AI' }
+        { name: 'Multimodal LLMs', meta: 'Generative AI Inference' }
       ]
     },
     {
@@ -221,9 +221,9 @@ const Home = () => {
       icon: Radio,
       skills: [
         { name: 'ESP32', meta: 'Edge Microcontrollers' },
-        { name: 'Arduino', meta: 'Hardware Interrupts' },
-        { name: 'Raspberry Pi 5', meta: 'Central Broker Hub' },
-        { name: 'MQTT', meta: 'Low-Latency Pub/Sub' }
+        { name: 'Arduino', meta: 'Bare-Metal Logic' },
+        { name: 'Raspberry Pi 5', meta: 'Edge Compute Node' },
+        { name: 'MQTT', meta: 'Event-Driven Pub/Sub' }
       ]
     },
     {
@@ -231,10 +231,10 @@ const Home = () => {
       category: 'DevOps & Tools',
       icon: Terminal,
       skills: [
-        { name: 'Docker', meta: 'Containerization' },
-        { name: 'Git', meta: 'Version Control' },
-        { name: 'n8n', meta: 'Workflow Engine' },
-        { name: 'Make.com', meta: 'Cloud Pipelines' }
+        { name: 'Docker', meta: 'Containerized Workloads' },
+        { name: 'Git', meta: 'Distributed VCS' },
+        { name: 'n8n', meta: 'Workflow Orchestration' },
+        { name: 'Make.com', meta: 'Cloud Integrations' }
       ]
     }
   ];
