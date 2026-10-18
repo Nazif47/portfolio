@@ -1,6 +1,9 @@
-import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
+import { useState } from 'react';
+import { Briefcase, Calendar, MapPin, CheckCircle2, FileText, X } from 'lucide-react';
 
 const Experience = () => {
+  const [isCertOpen, setIsCertOpen] = useState(false);
+
   const tags = [
     'Backend Development',
     'API Integrations',
@@ -106,10 +109,52 @@ const Experience = () => {
                   </span>
                 ))}
               </div>
+
+              {/* Internship Certificate Action Button */}
+              <div className="mt-6">
+                <button
+                  type="button"
+                  onClick={() => setIsCertOpen(true)}
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-700/70 hover:border-teal-500/60 dark:hover:border-teal-400/60 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm transition-all duration-300"
+                >
+                  <FileText className="w-4 h-4 text-teal-600 dark:text-teal-400" aria-hidden="true" />
+                  <span>View Internship Certificate</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Internship Certificate Modal */}
+      {isCertOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+          onClick={() => setIsCertOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Internship Certificate"
+        >
+          <div
+            className="w-full max-w-4xl h-[85vh] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setIsCertOpen(false)}
+              aria-label="Close certificate modal"
+              className="absolute top-3 right-3 z-10 p-2 rounded-full bg-zinc-800/90 text-zinc-200 hover:bg-zinc-700 hover:text-white border border-zinc-700 transition-colors shadow-md"
+            >
+              <X className="w-5 h-5" aria-hidden="true" />
+            </button>
+            <iframe
+              src="/Nazif_Internship_Certificate.pdf"
+              className="w-full h-full border-0"
+              title="Internship Certificate"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
