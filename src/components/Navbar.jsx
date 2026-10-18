@@ -19,12 +19,18 @@ const Navbar = () => {
     <nav className="fixed top-0 z-50 w-full border-b border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 text-zinc-900 dark:text-zinc-100 backdrop-blur-md transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <NavLink
-              to="/"
-              className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 transition-colors"
-            >
-              Nazif.
+          <div className="flex items-center flex-shrink-0">
+            <NavLink to="/" aria-label="Nazif Home" className="flex items-center">
+              <img 
+                src="/favicon-light.svg" 
+                alt="Nazif Logo" 
+                className="h-8 sm:h-9 w-auto object-contain block dark:hidden" 
+              />
+              <img 
+                src="/favicon-dark.svg" 
+                alt="Nazif Logo" 
+                className="h-8 sm:h-9 w-auto object-contain hidden dark:block" 
+              />
             </NavLink>
           </div>
           
