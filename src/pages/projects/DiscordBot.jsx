@@ -111,7 +111,7 @@ const DiscordBot = () => {
               <span>Internal Discord Node · Case Study</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 leading-tight pb-1">
               Custom Bot Architecture &amp; Telemetry Engine
             </h1>
 

@@ -125,7 +125,7 @@ const FinalYearProject = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight">
+              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
                 SmartLab Safety System
               </h1>
               <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 font-light mb-4">

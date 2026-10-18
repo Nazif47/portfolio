@@ -272,7 +272,7 @@ const Home = () => {
           {/* 3. Gradient Sub-Heading */}
           <MotionH2
             variants={heroItemSpringVariants}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 via-teal-600 to-cyan-600 dark:from-zinc-100 dark:via-teal-300 dark:to-cyan-400"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight leading-normal pb-2 mb-6 bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 via-teal-600 to-cyan-600 dark:from-zinc-100 dark:via-teal-300 dark:to-cyan-400"
           >
             Full-Stack Engineer &amp; IoT Solutions Architect
           </MotionH2>
@@ -577,7 +577,7 @@ const Home = () => {
                   <Trophy className="w-4 h-4" />
                   <span>04 // NATIONAL RECOGNITION</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight pb-1">
                   National Level Hackathon Winner: Smart India Hackathon (SIH)
                 </h2>
               </div>
@@ -664,7 +664,7 @@ const Home = () => {
                 {/* Minimal Soft Bottom Gradient & Plain White Caption */}
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
                 <div className="absolute bottom-3.5 left-4 right-4 pointer-events-none">
-                  <p className="text-sm sm:text-base font-medium text-white drop-shadow-md truncate">
+                  <p className="text-sm sm:text-base font-medium text-white drop-shadow-md truncate leading-normal pb-0.5">
                     {item.caption}
                   </p>
                 </div>

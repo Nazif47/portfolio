@@ -33,7 +33,7 @@ const About = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Story Behind the Systems</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight">
+          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
             Where Silicon Meets Software.
           </h1>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
