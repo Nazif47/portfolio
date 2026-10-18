@@ -1429,13 +1429,14 @@ const SIHProject = () => {
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
           <div
-            className="relative w-full max-w-5xl rounded-xl overflow-hidden shadow-2xl bg-black"
+            className="relative w-full max-w-5xl rounded-xl overflow-hidden shadow-2xl bg-zinc-900 aspect-video flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <video
               src="/videos/sih-demo.mp4"
               controls
               autoPlay
+              playsInline
               className="w-full h-auto max-h-[85vh] rounded-xl"
             ></video>
           </div>
