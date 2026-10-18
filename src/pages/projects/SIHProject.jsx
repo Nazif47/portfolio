@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
-  ExternalLink,
+  PlayCircle,
+  X,
   Cpu,
   Eye,
   Radio,
@@ -884,6 +885,8 @@ const ArchifyArchitectureFlow = () => {
 };
 
 const SIHProject = () => {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
+
   const hardwareModules = [
     {
       module: 'ESP32 Dev Module',
@@ -1068,14 +1071,14 @@ const SIHProject = () => {
                 </svg>
                 View GitHub Repository
               </a>
-              <a
-                href="#live-demo"
-                onClick={(e) => e.preventDefault()}
+              <button
+                type="button"
+                onClick={() => setIsVideoOpen(true)}
                 className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-100 text-zinc-800 border border-zinc-200 hover:bg-zinc-200/80 hover:border-zinc-300 dark:bg-zinc-900/90 dark:text-zinc-200 dark:border-zinc-700/80 font-medium text-sm dark:hover:bg-zinc-800 dark:hover:border-zinc-600 hover:-translate-y-0.5 transition-all"
               >
-                <ExternalLink className="w-4 h-4 text-teal-600 dark:text-teal-400" />
-                View Live Demo
-              </a>
+                <PlayCircle className="w-4 h-4 text-teal-600 dark:text-teal-400" aria-hidden="true" />
+                View Demo
+              </button>
             </div>
           </div>
 
@@ -1407,6 +1410,37 @@ const SIHProject = () => {
           </Link>
         </div>
       </div>
+
+      {/* In-Page Demo Video Modal */}
+      {isVideoOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4 sm:p-6"
+          onClick={() => setIsVideoOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Smart Blind Stick Demo Video"
+        >
+          <button
+            type="button"
+            onClick={() => setIsVideoOpen(false)}
+            aria-label="Close video modal"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] p-2 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all"
+          >
+            <X className="w-5 h-5" aria-hidden="true" />
+          </button>
+          <div
+            className="relative w-full max-w-5xl rounded-xl overflow-hidden shadow-2xl bg-black"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              src="/videos/sih-demo.mp4"
+              controls
+              autoPlay
+              className="w-full h-auto max-h-[85vh] rounded-xl"
+            ></video>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
