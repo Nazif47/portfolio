@@ -9,6 +9,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import SIHProject from './pages/projects/SIHProject';
 import FinalYearProject from './pages/projects/FinalYearProject';
+import DiscordBot from './pages/projects/DiscordBot';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 
@@ -103,6 +104,14 @@ const AnimatedRoutes = () => {
           element={
             <PageTransition>
               <FinalYearProject />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/projects/discord-bots"
+          element={
+            <PageTransition>
+              <DiscordBot />
             </PageTransition>
           }
         />
