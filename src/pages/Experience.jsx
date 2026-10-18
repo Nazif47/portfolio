@@ -214,18 +214,18 @@ const Experience = () => {
           aria-modal="true"
           aria-label="Internship Certificate"
         >
+          <button
+            type="button"
+            onClick={() => setIsCertOpen(false)}
+            aria-label="Close certificate modal"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] p-2 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all"
+          >
+            <X className="w-5 h-5" aria-hidden="true" />
+          </button>
           <div
             className="w-full max-w-4xl h-[85vh] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setIsCertOpen(false)}
-              aria-label="Close certificate modal"
-              className="absolute top-3 right-3 z-10 p-2 rounded-full bg-zinc-800/90 text-zinc-200 hover:bg-zinc-700 hover:text-white border border-zinc-700 transition-colors shadow-md"
-            >
-              <X className="w-5 h-5" aria-hidden="true" />
-            </button>
             <iframe
               src="/Nazif_Internship_Certificate.pdf#toolbar=0"
               className="w-full h-full border-0"
