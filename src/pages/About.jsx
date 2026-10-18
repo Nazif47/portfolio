@@ -1,49 +1,25 @@
 import { Link } from 'react-router-dom';
 import { Cpu, Briefcase, Gamepad2, Sparkles, GraduationCap, MapPin } from 'lucide-react';
-
-const createPlaceholderDataUri = (label, sublabel, accentHex) => {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-    <defs>
-      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#18181b" />
-        <stop offset="100%" stop-color="#09090b" />
-      </linearGradient>
-      <radialGradient id="glow" cx="75%" cy="25%" r="60%">
-        <stop offset="0%" stop-color="${accentHex}" stop-opacity="0.22" />
-        <stop offset="100%" stop-color="${accentHex}" stop-opacity="0" />
-      </radialGradient>
-      <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1" fill="#3f3f46" opacity="0.55" />
-      </pattern>
-    </defs>
-    <rect width="800" height="600" fill="url(#bg)" />
-    <rect width="800" height="600" fill="url(#glow)" />
-    <rect width="800" height="600" fill="url(#dots)" />
-    <rect x="40" y="40" width="720" height="520" rx="20" fill="none" stroke="#27272a" stroke-width="1.5" />
-    <text x="72" y="488" fill="${accentHex}" font-family="monospace" font-size="15" font-weight="600" letter-spacing="2">${sublabel}</text>
-    <text x="72" y="524" fill="#f4f4f5" font-family="sans-serif" font-size="26" font-weight="700">${label}</text>
-  </svg>`;
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-};
+import { createPlaceholderDataUri } from '../utils/placeholderSvg';
 
 const photoGalleryItems = [
   {
     src: '/images/labsafety-working-prototype.jpg',
     alt: 'Hardware prototyping and embedded systems workbench',
     caption: 'Embedded Systems & Sensor Fusion Lab',
-    fallback: createPlaceholderDataUri('Embedded Hardware Workbench', 'ECE · HARDWARE LAB', '#14b8a6')
+    fallback: createPlaceholderDataUri('Embedded Hardware Workbench', 'ECE · HARDWARE LAB', '#14b8a6', { width: 800, height: 600 })
   },
   {
     src: '/images/nazif-formal-image.png',
     alt: 'Full-stack engineering and AI workflow architecture',
     caption: 'Nazif Gangawali',
-    fallback: createPlaceholderDataUri('AI & Full-Stack Dev', 'GULF INFOTECH', '#0ea5e9')
+    fallback: createPlaceholderDataUri('AI & Full-Stack Dev', 'GULF INFOTECH', '#0ea5e9', { width: 800, height: 600 })
   },
   {
     src: '/images/assistive-mobility.png',
     alt: 'Smart India Hackathon and field testing prototypes',
     caption: 'Assistive Mobility Hardware Prototype',
-    fallback: createPlaceholderDataUri('IoT Field Prototypes', 'EDGE TO CLOUD', '#14b8a6')
+    fallback: createPlaceholderDataUri('IoT Field Prototypes', 'EDGE TO CLOUD', '#14b8a6', { width: 800, height: 600 })
   }
 ];
 
@@ -168,7 +144,10 @@ const About = () => {
                   <img
                     src={photo.src}
                     alt={photo.alt}
+                    width="800"
+                    height="600"
                     loading="eager"
+                    decoding="async"
                     onError={(e) => {
                       if (e.currentTarget.src !== photo.fallback) {
                         e.currentTarget.src = photo.fallback;

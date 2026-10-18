@@ -20,32 +20,9 @@ import {
   Award
 } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
-import profilePic from '../assets/Nazif_Fromal_Image.png';
+import { createPlaceholderDataUri } from '../utils/placeholderSvg';
 
-const createPlaceholderDataUri = (label, sublabel, accentHex) => {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520">
-    <defs>
-      <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#18181b" />
-        <stop offset="100%" stop-color="#09090b" />
-      </linearGradient>
-      <radialGradient id="glow" cx="75%" cy="25%" r="60%">
-        <stop offset="0%" stop-color="${accentHex}" stop-opacity="0.25" />
-        <stop offset="100%" stop-color="${accentHex}" stop-opacity="0" />
-      </radialGradient>
-      <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse">
-        <circle cx="2" cy="2" r="1" fill="#3f3f46" opacity="0.55" />
-      </pattern>
-    </defs>
-    <rect width="800" height="520" fill="url(#bg)" />
-    <rect width="800" height="520" fill="url(#glow)" />
-    <rect width="800" height="520" fill="url(#dots)" />
-    <rect x="36" y="36" width="728" height="448" rx="18" fill="none" stroke="#27272a" stroke-width="1.5" />
-    <text x="68" y="390" fill="${accentHex}" font-family="monospace" font-size="14" font-weight="600" letter-spacing="2">${sublabel}</text>
-    <text x="68" y="426" fill="#f4f4f5" font-family="sans-serif" font-size="24" font-weight="700">${label}</text>
-  </svg>`;
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
-};
+const profilePic = '/images/nazif-formal-image.png';
 
 const sihMarqueeItems = [
   {
@@ -277,6 +254,9 @@ const Home = () => {
             <img 
               src={profilePic} 
               alt="Nazif" 
+              width="240"
+              height="240"
+              decoding="async"
               className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
             />
           </MotionDiv>
@@ -615,21 +595,33 @@ const Home = () => {
                 <img
                   src="/logo/SIH_HardwareBranding.png"
                   alt="Smart India Hackathon Hardware Edition"
+                  width="160"
+                  height="48"
+                  decoding="async"
                   className="h-10 sm:h-12 w-auto object-contain dark:bg-white/95 dark:px-3 dark:py-1.5 dark:rounded-xl dark:shadow-sm transition-colors duration-300"
                 />
                 <img
                   src="/logo/Ministry of Education.png"
                   alt="Ministry of Education, Government of India"
+                  width="160"
+                  height="48"
+                  decoding="async"
                   className="h-10 sm:h-12 w-auto object-contain dark:bg-white/95 dark:px-3 dark:py-1.5 dark:rounded-xl dark:shadow-sm transition-colors duration-300"
                 />
                 <img
                   src="/logo/MoE.png"
                   alt="MoE's Innovation Cell"
+                  width="160"
+                  height="48"
+                  decoding="async"
                   className="h-10 sm:h-12 w-auto object-contain dark:bg-white/95 dark:px-3 dark:py-1.5 dark:rounded-xl dark:shadow-sm transition-colors duration-300"
                 />
                 <img
                   src="/logo/AICTE.png"
                   alt="AICTE"
+                  width="160"
+                  height="48"
+                  decoding="async"
                   className="h-10 sm:h-12 w-auto object-contain dark:bg-white/95 dark:px-3 dark:py-1.5 dark:rounded-xl dark:shadow-sm transition-colors duration-300"
                 />
               </div>

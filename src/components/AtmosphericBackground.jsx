@@ -196,9 +196,49 @@ const AtmosphericBackground = () => {
       ctx.fillRect(0, 0, width, height);
     };
 
+    const reducedMotionQuery =
+      typeof window.matchMedia === 'function'
+        ? window.matchMedia('(prefers-reduced-motion: reduce)')
+        : null;
+    let isReducedMotion = Boolean(reducedMotionQuery && reducedMotionQuery.matches);
+
     const renderLoop = () => {
+      if (document.hidden || isReducedMotion) {
+        animationFrameId = null;
+        return;
+      }
       drawFrame(true);
       animationFrameId = requestAnimationFrame(renderLoop);
+    };
+
+    const startLoopIfActive = () => {
+      if (!document.hidden && !isReducedMotion && !animationFrameId) {
+        animationFrameId = requestAnimationFrame(renderLoop);
+      }
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+      } else {
+        startLoopIfActive();
+      }
+    };
+
+    const handleReducedMotionChange = (e) => {
+      isReducedMotion = e.matches;
+      if (isReducedMotion) {
+        if (animationFrameId) {
+          cancelAnimationFrame(animationFrameId);
+          animationFrameId = null;
+        }
+        drawFrame(false);
+      } else {
+        startLoopIfActive();
+      }
     };
 
     const handleResize = () => {
@@ -229,14 +269,25 @@ const AtmosphericBackground = () => {
 
     window.addEventListener('resize', handleResize, { passive: true });
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    if (reducedMotionQuery?.addEventListener) {
+      reducedMotionQuery.addEventListener('change', handleReducedMotionChange);
+    }
 
-    animationFrameId = requestAnimationFrame(renderLoop);
+    drawFrame(false);
+    startLoopIfActive();
 
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
       observer.disconnect();
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      if (reducedMotionQuery?.removeEventListener) {
+        reducedMotionQuery.removeEventListener('change', handleReducedMotionChange);
+      }
     };
   }, []);
 

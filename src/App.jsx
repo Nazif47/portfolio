@@ -1,17 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import AtmosphericBackground from './components/AtmosphericBackground';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
-import Projects from './pages/Projects';
-import SIHProject from './pages/projects/SIHProject';
-import FinalYearProject from './pages/projects/FinalYearProject';
-import DiscordBot from './pages/projects/DiscordBot';
-import Experience from './pages/Experience';
-import Contact from './pages/Contact';
+
+const About = lazy(() => import('./pages/About'));
+const Projects = lazy(() => import('./pages/Projects'));
+const SIHProject = lazy(() => import('./pages/projects/SIHProject'));
+const FinalYearProject = lazy(() => import('./pages/projects/FinalYearProject'));
+const DiscordBot = lazy(() => import('./pages/projects/DiscordBot'));
+const Experience = lazy(() => import('./pages/Experience'));
+const Contact = lazy(() => import('./pages/Contact'));
 
 const pageVariants = {
   initial: {
@@ -65,78 +66,80 @@ const AnimatedRoutes = () => {
   }, [location.pathname]);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <Routes location={location} key={location.pathname}>
-        <Route
-          path="/"
-          element={
-            <PageTransition>
-              <Home />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <PageTransition>
-              <About />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/projects"
-          element={
-            <PageTransition>
-              <Projects />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/projects/sih"
-          element={
-            <PageTransition>
-              <SIHProject />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/projects/final-year"
-          element={
-            <PageTransition>
-              <FinalYearProject />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/projects/discord-bots"
-          element={
-            <PageTransition>
-              <DiscordBot />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/projects/navigation-aid"
-          element={<Navigate to="/projects/final-year" replace />}
-        />
-        <Route
-          path="/experience"
-          element={
-            <PageTransition>
-              <Experience />
-            </PageTransition>
-          }
-        />
-        <Route
-          path="/contact"
-          element={
-            <PageTransition>
-              <Contact />
-            </PageTransition>
-          }
-        />
-      </Routes>
-    </AnimatePresence>
+    <Suspense fallback={<div className="flex-grow min-h-[60vh]" aria-hidden="true" />}>
+      <AnimatePresence mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <PageTransition>
+                <Home />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <PageTransition>
+                <About />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <PageTransition>
+                <Projects />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects/sih"
+            element={
+              <PageTransition>
+                <SIHProject />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects/final-year"
+            element={
+              <PageTransition>
+                <FinalYearProject />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects/discord-bots"
+            element={
+              <PageTransition>
+                <DiscordBot />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/projects/navigation-aid"
+            element={<Navigate to="/projects/final-year" replace />}
+          />
+          <Route
+            path="/experience"
+            element={
+              <PageTransition>
+                <Experience />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <PageTransition>
+                <Contact />
+              </PageTransition>
+            }
+          />
+        </Routes>
+      </AnimatePresence>
+    </Suspense>
   );
 };
 
