@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowLeft,
@@ -886,6 +886,52 @@ const ArchifyArchitectureFlow = () => {
 
 const SIHProject = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (isVideoOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isVideoOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isVideoOpen || !videoRef.current) return;
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        videoRef.current.currentTime = Math.min(
+          videoRef.current.duration || Infinity,
+          videoRef.current.currentTime + 5
+        );
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        videoRef.current.currentTime = Math.max(0, videoRef.current.currentTime - 5);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isVideoOpen]);
+
+  const handleVideoDoubleClick = (e) => {
+    if (!videoRef.current) return;
+    e.preventDefault();
+    const rect = e.currentTarget.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    if (clickX < rect.width / 2) {
+      videoRef.current.currentTime = Math.max(0, videoRef.current.currentTime - 5);
+    } else {
+      videoRef.current.currentTime = Math.min(
+        videoRef.current.duration || Infinity,
+        videoRef.current.currentTime + 5
+      );
+    }
+  };
 
   const hardwareModules = [
     {
@@ -1433,10 +1479,12 @@ const SIHProject = () => {
             onClick={(e) => e.stopPropagation()}
           >
             <video
+              ref={videoRef}
               src="/videos/sih-demo.mp4"
               controls
               autoPlay
               playsInline
+              onDoubleClick={handleVideoDoubleClick}
               className="w-full h-auto max-h-[85vh] rounded-xl"
             ></video>
           </div>
