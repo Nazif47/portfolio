@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { Briefcase, Calendar, MapPin, CheckCircle2, FileText, X } from 'lucide-react';
 
 const Experience = () => {
@@ -33,7 +34,7 @@ const Experience = () => {
   ];
 
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="mb-12">
@@ -41,7 +42,7 @@ const Experience = () => {
             <Briefcase className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Career Timeline</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-3">
             Professional Experience
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400 text-base sm:text-lg max-w-2xl">
@@ -76,7 +77,7 @@ const Experience = () => {
                     />
                   </div>
                   <div>
-                    <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100">
                       AI &amp; Full-Stack Developer
                     </h2>
                     <p className="text-sm font-medium text-teal-600 dark:text-teal-400 mt-0.5">
@@ -146,7 +147,7 @@ const Experience = () => {
                     />
                   </div>
                   <div>
-                    <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100">
                       AI &amp; Full-Stack Developer Intern
                     </h2>
                     <p className="text-sm font-medium text-teal-600 dark:text-teal-400 mt-0.5">
@@ -194,9 +195,9 @@ const Experience = () => {
                 <button
                   type="button"
                   onClick={() => setIsCertOpen(true)}
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-700/70 hover:border-teal-500/60 dark:hover:border-teal-400/60 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-4 py-2.5 rounded-xl text-sm font-medium bg-zinc-100 dark:bg-zinc-800/80 text-zinc-900 dark:text-zinc-100 border border-zinc-200 dark:border-zinc-700/70 hover:border-teal-500/60 dark:hover:border-teal-400/60 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm transition-all duration-300"
                 >
-                  <FileText className="w-4 h-4 text-teal-600 dark:text-teal-400" aria-hidden="true" />
+                  <FileText className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" aria-hidden="true" />
                   <span>View Internship Certificate</span>
                 </button>
               </div>
@@ -206,9 +207,9 @@ const Experience = () => {
       </div>
 
       {/* Internship Certificate Modal */}
-      {isCertOpen && (
+      {isCertOpen && typeof document !== 'undefined' && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
           onClick={() => setIsCertOpen(false)}
           role="dialog"
           aria-modal="true"
@@ -218,12 +219,12 @@ const Experience = () => {
             type="button"
             onClick={() => setIsCertOpen(false)}
             aria-label="Close certificate modal"
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] p-2 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2.5 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all"
           >
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
           <div
-            className="w-full max-w-4xl h-[85vh] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl relative"
+            className="w-full max-w-4xl h-[85dvh] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl relative"
             onClick={(e) => e.stopPropagation()}
           >
             <iframe
@@ -232,7 +233,8 @@ const Experience = () => {
               title="Internship Certificate"
             />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );

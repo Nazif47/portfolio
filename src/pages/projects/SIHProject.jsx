@@ -875,7 +875,7 @@ const ArchifyArchitectureFlow = () => {
               setSelectedNodeId(null);
               setActiveLensKind(null);
             }}
-            className="self-start sm:self-auto shrink-0 px-2.5 py-1 rounded-lg font-mono text-[11px] bg-zinc-200/80 hover:bg-zinc-300/80 text-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 transition-colors"
+            className="self-start sm:self-auto shrink-0 inline-flex items-center justify-center min-h-[44px] px-3.5 py-2 rounded-lg font-mono text-[11px] bg-zinc-200/80 hover:bg-zinc-300/80 text-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 transition-colors"
           >
             Reset Focus
           </button>
@@ -1062,13 +1062,13 @@ const SIHProject = () => {
   };
 
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors group"
+            className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
             Back to Projects Directory
@@ -1094,7 +1094,7 @@ const SIHProject = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
                 Smart Blind Stick
               </h1>
               <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 font-light mb-4">
@@ -1111,9 +1111,9 @@ const SIHProject = () => {
                 href="https://github.com/Nazif47/SmartBlindStick"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-sm dark:hover:bg-white hover:-translate-y-0.5 transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2.5 min-h-[44px] px-5 py-3 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-sm dark:hover:bg-white hover:-translate-y-0.5 transition-all shadow-sm"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                 </svg>
                 View GitHub Repository
@@ -1121,16 +1121,16 @@ const SIHProject = () => {
               <button
                 type="button"
                 onClick={() => setIsVideoOpen(true)}
-                className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-100 text-zinc-800 border border-zinc-200 hover:bg-zinc-200/80 hover:border-zinc-300 dark:bg-zinc-900/90 dark:text-zinc-200 dark:border-zinc-700/80 font-medium text-sm dark:hover:bg-zinc-800 dark:hover:border-zinc-600 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center gap-2.5 min-h-[44px] px-5 py-3 rounded-xl bg-zinc-100 text-zinc-800 border border-zinc-200 hover:bg-zinc-200/80 hover:border-zinc-300 dark:bg-zinc-900/90 dark:text-zinc-200 dark:border-zinc-700/80 font-medium text-sm dark:hover:bg-zinc-800 dark:hover:border-zinc-600 hover:-translate-y-0.5 transition-all"
               >
-                <PlayCircle className="w-4 h-4 text-teal-600 dark:text-teal-400" aria-hidden="true" />
+                <PlayCircle className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" aria-hidden="true" />
                 View Demo
               </button>
             </div>
           </div>
 
           {/* Animated Telemetry Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800/80">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800/80">
             <div className="bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800/60 rounded-xl p-4">
               <p className="text-xs uppercase tracking-wider text-zinc-500 mb-1">ToF Sensing Planes</p>
               <p className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
@@ -1167,16 +1167,16 @@ const SIHProject = () => {
           {/* Bento Card 1: Dual-Level ToF Sensing (Spans 2 Columns) */}
           <div className="md:col-span-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                  <Layers className="w-4 h-4" />
+                  <Layers className="w-4 h-4 shrink-0" />
                   Dual-Level Time-of-Flight Ranging
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   I2C + GPIO25 Interrupt
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Isolated Foot-Level &amp; Head-Level Obstacle Architecture
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed mb-6">
@@ -1186,7 +1186,7 @@ const SIHProject = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-zinc-200 dark:border-zinc-800/70">
               <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-4">
-                <div className="flex items-center justify-between mb-1.5">
+                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
                   <span className="text-sm font-medium text-zinc-900 dark:text-zinc-200">VL53L5CX ToF Imager</span>
                   <span className="text-xs font-mono text-teal-600 dark:text-teal-400">Foot Plane</span>
                 </div>
@@ -1195,7 +1195,7 @@ const SIHProject = () => {
                 </p>
               </div>
               <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-4">
-                <div className="flex items-center justify-between mb-1.5">
+                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
                   <span className="text-sm font-medium text-zinc-900 dark:text-zinc-200">VL53L0X + Arduino Nano</span>
                   <span className="text-xs font-mono text-sky-600 dark:text-sky-400">Head Plane</span>
                 </div>
@@ -1209,16 +1209,16 @@ const SIHProject = () => {
           {/* Bento Card 2: MPU6050 Tilt & Power Management (Spans 1 Column) */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                  <Compass className="w-4 h-4" />
+                  <Compass className="w-4 h-4 shrink-0" />
                   Inertial &amp; Power Logic
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   MPU6050 + 555 IC
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Orientation Gating &amp; Auto-Shutdown
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-5">
@@ -1246,20 +1246,20 @@ const SIHProject = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
               <div>
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-1">
-                  <Cpu className="w-4 h-4" />
+                  <Cpu className="w-4 h-4 shrink-0" />
                   Event-Driven Hardware &amp; AI Signal Flow
                 </span>
-                <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100">
                   Conditional Vision &amp; Multi-Path Failover Architecture
                 </h2>
               </div>
               <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-600 dark:text-zinc-400">
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-teal-500 dark:bg-teal-400"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-teal-500 dark:bg-teal-400 shrink-0"></span>
                   Primary Trigger / Vision Path
                 </span>
                 <span className="inline-flex items-center gap-1.5">
-                  <span className="w-2.5 h-2.5 rounded-full bg-violet-500 dark:bg-violet-400"></span>
+                  <span className="w-2.5 h-2.5 rounded-full bg-violet-500 dark:bg-violet-400 shrink-0"></span>
                   Failover / Redundant Link
                 </span>
               </div>
@@ -1271,16 +1271,16 @@ const SIHProject = () => {
           {/* Bento Card 4: Conditional ESP32-CAM Vision */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                  <Eye className="w-4 h-4" />
+                  <Eye className="w-4 h-4 shrink-0" />
                   Event-Driven Vision
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   ESP32-CAM OV2640
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Conditional Camera Awakening
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-4">
@@ -1289,7 +1289,7 @@ const SIHProject = () => {
             </div>
             <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-4">
               <div className="flex items-center gap-2 text-xs font-mono text-teal-700 dark:text-teal-300 mb-1">
-                <Wifi className="w-3.5 h-3.5" />
+                <Wifi className="w-3.5 h-3.5 shrink-0" />
                 <span>GET /capture over Local Hotspot</span>
               </div>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -1301,16 +1301,16 @@ const SIHProject = () => {
           {/* Bento Card 5: Hybrid AI Vision Pipeline */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                  <Sparkles className="w-4 h-4" />
+                  <Sparkles className="w-4 h-4 shrink-0" />
                   Hybrid AI Inference
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   Cloud + Edge ONNX
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Gemini Cloud to Local ONNX Failover
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-4">
@@ -1319,7 +1319,7 @@ const SIHProject = () => {
             </div>
             <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-4">
               <div className="flex items-center gap-2 text-xs font-mono text-sky-700 dark:text-sky-300 mb-1">
-                <Volume2 className="w-3.5 h-3.5" />
+                <Volume2 className="w-3.5 h-3.5 shrink-0" />
                 <span>Real-Time Spoken Synthesis</span>
               </div>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -1331,16 +1331,16 @@ const SIHProject = () => {
           {/* Bento Card 6: Redundant GSM to RF Failover */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                  <Radio className="w-4 h-4" />
+                  <Radio className="w-4 h-4 shrink-0" />
                   Fail-Safe Telemetry
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   SIM800L + NRF24L01
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Dual-Path Emergency Escalation
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-4">
@@ -1349,7 +1349,7 @@ const SIHProject = () => {
             </div>
             <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-4">
               <div className="flex items-center gap-2 text-xs font-mono text-teal-700 dark:text-teal-300 mb-1">
-                <MapPin className="w-3.5 h-3.5" />
+                <MapPin className="w-3.5 h-3.5 shrink-0" />
                 <span>Dual-Source Geolocation</span>
               </div>
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -1364,10 +1364,10 @@ const SIHProject = () => {
           {/* Hardware Module Specification List */}
           <div className="lg:col-span-1 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-sm dark:shadow-none">
             <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-              <Zap className="w-4 h-4" />
+              <Zap className="w-4 h-4 shrink-0" />
               Hardware Bill of Materials
             </div>
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
+            <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-4">
               Subsystem Module Roles
             </h2>
             <div className="space-y-3">
@@ -1376,7 +1376,7 @@ const SIHProject = () => {
                   key={idx}
                   className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/70 rounded-xl p-3.5 hover:border-zinc-300 dark:hover:border-zinc-700/80 transition-colors"
                 >
-                  <div className="flex items-center justify-between gap-2 mb-1">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
                     <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{item.module}</span>
                     <span className="text-[11px] font-mono text-teal-700 dark:text-teal-400 bg-teal-500/10 px-2 py-0.5 rounded border border-teal-500/20">
                       {item.bus}
@@ -1391,14 +1391,14 @@ const SIHProject = () => {
           {/* Comparative Analysis Table from Report */}
           <div className="lg:col-span-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                  <ShieldAlert className="w-4 h-4" />
+                  <ShieldAlert className="w-4 h-4 shrink-0" />
                   Benchmarking &amp; Novelty Verification
                 </span>
                 <span className="text-xs text-zinc-500 font-mono">SIH Technical Report — Table II</span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
                 Comparative Analysis vs. Existing Assistive Systems
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
@@ -1451,7 +1451,7 @@ const SIHProject = () => {
         <div className="flex justify-end">
           <Link
             to="/projects/final-year"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors py-8"
+            className="inline-flex items-center gap-2 min-h-[44px] text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors py-6 sm:py-8"
           >
             Explore Aura-x9 Safety Network &rarr;
           </Link>
@@ -1471,7 +1471,7 @@ const SIHProject = () => {
             type="button"
             onClick={() => setIsVideoOpen(false)}
             aria-label="Close video modal"
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] p-2 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2.5 bg-zinc-900/60 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all"
           >
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
@@ -1486,7 +1486,7 @@ const SIHProject = () => {
               autoPlay
               playsInline
               onDoubleClick={handleVideoDoubleClick}
-              className="w-full h-auto max-h-[85vh] rounded-xl"
+              className="w-full h-auto max-h-[85dvh] rounded-xl"
             ></video>
           </div>
         </div>,

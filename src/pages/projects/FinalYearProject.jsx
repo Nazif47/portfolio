@@ -96,13 +96,13 @@ const FinalYearProject = () => {
   ];
 
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
           <Link
             to="/projects"
-            className="inline-flex items-center gap-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors group"
+            className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
             Back to Projects Directory
@@ -125,7 +125,7 @@ const FinalYearProject = () => {
                 </span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
                 SmartLab Safety System
               </h1>
               <p className="text-lg sm:text-xl text-zinc-700 dark:text-zinc-300 font-light mb-4">
@@ -142,9 +142,9 @@ const FinalYearProject = () => {
                 href="https://github.com/Nazif47/SmartLabSafetySystem"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-sm dark:hover:bg-white hover:-translate-y-0.5 transition-all shadow-sm"
+                className="inline-flex items-center justify-center gap-2.5 min-h-[44px] px-5 py-3 rounded-xl bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-sm dark:hover:bg-white hover:-translate-y-0.5 transition-all shadow-sm"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                 </svg>
                 View GitHub Repository
@@ -153,16 +153,16 @@ const FinalYearProject = () => {
                 href="/SmartLab_Research_Paper.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-zinc-100 text-zinc-800 border border-zinc-200 hover:bg-zinc-200/80 hover:border-zinc-300 dark:bg-zinc-900/90 dark:text-zinc-200 dark:border-zinc-700/80 font-medium text-sm dark:hover:bg-zinc-800 dark:hover:border-zinc-600 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center gap-2.5 min-h-[44px] px-5 py-3 rounded-xl bg-zinc-100 text-zinc-800 border border-zinc-200 hover:bg-zinc-200/80 hover:border-zinc-300 dark:bg-zinc-900/90 dark:text-zinc-200 dark:border-zinc-700/80 font-medium text-sm dark:hover:bg-zinc-800 dark:hover:border-zinc-600 hover:-translate-y-0.5 transition-all"
               >
-                <FileText className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                <FileText className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
                 Read Research Paper
               </a>
             </div>
           </div>
 
           {/* Animated Telemetry Strip */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800/80">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 pt-8 border-t border-zinc-200 dark:border-zinc-800/80">
             <div className="bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200 dark:border-zinc-800/60 rounded-xl p-4">
               <p className="text-xs uppercase tracking-wider text-zinc-500 mb-1">End-to-End Actuation</p>
               <p className="text-2xl sm:text-3xl font-bold text-zinc-900 dark:text-zinc-100">
@@ -202,10 +202,10 @@ const FinalYearProject = () => {
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
                 <div>
                   <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-1">
-                    <BarChart3 className="w-4 h-4" />
+                    <BarChart3 className="w-4 h-4 shrink-0" />
                     Benchmark Telemetry — Conference Paper Fig. 4
                   </span>
-                  <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100">
                     System Response Latency Comparison (ms)
                   </h2>
                 </div>
@@ -362,16 +362,16 @@ const FinalYearProject = () => {
           {/* Bento Card 2: Central Broker & Dual-Output Mitigation (Spans 1 Column) */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                  <Server className="w-4 h-4" />
+                  <Server className="w-4 h-4 shrink-0" />
                   Central Hub Architecture
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   Raspberry Pi
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Dual-Output Zero-Latency Mitigation
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-5">
@@ -381,7 +381,7 @@ const FinalYearProject = () => {
               <div className="space-y-3">
                 <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-3.5">
                   <div className="flex items-center gap-2 text-xs font-semibold text-cyan-700 dark:text-cyan-300 uppercase tracking-wide mb-1">
-                    <Zap className="w-4 h-4 text-cyan-600 dark:text-cyan-400" />
+                    <Zap className="w-4 h-4 text-cyan-600 dark:text-cyan-400 shrink-0" />
                     1. Headless Python Relay Daemon
                   </div>
                   <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -391,7 +391,7 @@ const FinalYearProject = () => {
 
                 <div className="bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-3.5">
                   <div className="flex items-center gap-2 text-xs font-semibold text-teal-700 dark:text-teal-300 uppercase tracking-wide mb-1">
-                    <Activity className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+                    <Activity className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
                     2. WebSockets Live Dashboard
                   </div>
                   <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -401,7 +401,7 @@ const FinalYearProject = () => {
               </div>
             </div>
 
-            <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800/70 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400">
+            <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800/70 flex flex-wrap items-center justify-between gap-2 text-xs text-zinc-600 dark:text-zinc-400">
               <span>Offline-First Local WLAN</span>
               <span className="font-mono text-cyan-600 dark:text-cyan-400">Zero Cloud Dependency</span>
             </div>
@@ -410,16 +410,16 @@ const FinalYearProject = () => {
           {/* Bento Card 3: 4-Sensor Edge Node & Forensic Accountability */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
-                  <KeyRound className="w-4 h-4" />
+                  <KeyRound className="w-4 h-4 shrink-0" />
                   Forensic Accountability
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   RC522 SPI (3.3V)
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 RFID Personnel &amp; Hazard Correlation
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-4">
@@ -439,16 +439,16 @@ const FinalYearProject = () => {
           {/* Bento Card 4: Environmental & Security Sensor Array */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                  <Flame className="w-4 h-4" />
+                  <Flame className="w-4 h-4 shrink-0" />
                   Edge Sensor Suite
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   GPIO 34 ADC + Digital
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Multi-Modal Zonal Telemetry
               </h2>
               <div className="space-y-2.5 text-xs text-zinc-600 dark:text-zinc-400">
@@ -467,16 +467,16 @@ const FinalYearProject = () => {
           {/* Bento Card 5: Custom PCB Thermal/RF Zoning & Power Protection */}
           <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
-                  <Cpu className="w-4 h-4" />
+                  <Cpu className="w-4 h-4 shrink-0" />
                   Hardware Fabrication
                 </span>
                 <span className="text-xs font-mono text-zinc-600 dark:text-zinc-500 bg-zinc-100 dark:bg-zinc-950/80 px-2.5 py-1 rounded border border-zinc-200 dark:border-zinc-800">
                   Thermal &amp; RF Zones
                 </span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 PCB Isolation &amp; Short-Circuit Containment
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed mb-4">
@@ -500,10 +500,10 @@ const FinalYearProject = () => {
           <div className="lg:col-span-1 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400 mb-2">
-                <Network className="w-4 h-4" />
+                <Network className="w-4 h-4 shrink-0" />
                 Conference Paper — Table I
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 IoT Protocol Latency Metrics
               </h2>
               <div className="space-y-3 mb-6">
@@ -516,7 +516,7 @@ const FinalYearProject = () => {
                         : 'bg-zinc-50 dark:bg-zinc-950/60 border-zinc-200 dark:border-zinc-800/70'
                     }`}
                   >
-                    <div className="flex items-center justify-between gap-2 mb-1">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-1">
                       <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{item.protocol}</span>
                       <span
                         className={`text-xs font-mono px-2 py-0.5 rounded whitespace-nowrap shrink-0 ${
@@ -528,7 +528,7 @@ const FinalYearProject = () => {
                         {item.latency}
                       </span>
                     </div>
-                    <div className="flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-400 mt-1">
+                    <div className="flex flex-wrap items-center justify-between gap-1 text-xs text-zinc-600 dark:text-zinc-400 mt-1">
                       <span>Jitter: {item.jitter}</span>
                       <span className={item.highlight ? 'text-teal-700 dark:text-teal-300 font-medium' : ''}>
                         {item.suitability}
@@ -541,7 +541,7 @@ const FinalYearProject = () => {
 
             {/* Topic Hierarchy Box */}
             <div className="bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-4">
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span className="text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
                   Hierarchical Topic Tree
                 </span>
@@ -559,14 +559,14 @@ const FinalYearProject = () => {
           {/* Table II: Comparison with Previous Related Papers */}
           <div className="lg:col-span-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300 shadow-sm dark:shadow-none flex flex-col justify-between">
             <div>
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
-                  <ShieldCheck className="w-4 h-4" />
+                  <ShieldCheck className="w-4 h-4 shrink-0" />
                   Literature Benchmarking — Table II
                 </span>
                 <span className="text-xs font-mono text-zinc-500">IEEE Conference Evaluation</span>
               </div>
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
+              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-2">
                 Comparison With Previous Safety Architectures
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
@@ -649,7 +649,7 @@ const FinalYearProject = () => {
         <div className="flex justify-end">
           <Link
             to="/projects/sih"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors py-8"
+            className="inline-flex items-center gap-2 min-h-[44px] text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white transition-colors py-6 sm:py-8"
           >
             &larr; View Smart Blind Stick (SIH)
           </Link>

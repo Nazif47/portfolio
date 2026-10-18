@@ -19,20 +19,20 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-24 pb-16 min-h-screen">
+    <div className="pt-24 pb-16 min-h-[100dvh]">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
             Get In Touch
           </h1>
-          <p className="mt-4 text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto text-lg font-light">
+          <p className="mt-4 text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto text-base sm:text-lg font-light">
             Whether you have a question, a project proposal, or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80 rounded-2xl p-8 shadow-sm transition-colors duration-300">
+          <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80 rounded-2xl p-6 sm:p-8 shadow-sm transition-colors duration-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-400 mb-2">Name</label>
@@ -41,7 +41,7 @@ const Contact = () => {
                   id="name" 
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-zinc-200 focus:border-zinc-500 focus:ring-0 focus-visible:ring-2 focus-visible:ring-teal-500/40 rounded-lg px-4 py-3 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600 outline-none"
+                  className="w-full min-h-[44px] bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-zinc-200 focus:border-zinc-500 focus:ring-0 focus-visible:ring-2 focus-visible:ring-teal-500/40 rounded-lg px-4 py-3 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600 outline-none"
                   placeholder="Your Full Name"
                 />
               </div>
@@ -52,7 +52,7 @@ const Contact = () => {
                   id="email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-zinc-200 focus:border-zinc-500 focus:ring-0 focus-visible:ring-2 focus-visible:ring-teal-500/40 rounded-lg px-4 py-3 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600 outline-none"
+                  className="w-full min-h-[44px] bg-zinc-50 dark:bg-zinc-900/80 border border-zinc-300 dark:border-zinc-800 text-zinc-900 dark:text-zinc-200 focus:border-zinc-500 focus:ring-0 focus-visible:ring-2 focus-visible:ring-teal-500/40 rounded-lg px-4 py-3 transition-colors placeholder:text-zinc-400 dark:placeholder:text-zinc-600 outline-none"
                   placeholder="you@company.com"
                 />
               </div>
@@ -69,7 +69,7 @@ const Contact = () => {
               </div>
               <button 
                 type="submit"
-                className="w-full bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium px-5 py-2.5 rounded-lg dark:hover:bg-white transition-all shadow-sm"
+                className="w-full min-h-[44px] bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 font-medium px-5 py-3 rounded-lg dark:hover:bg-white transition-all shadow-sm"
               >
                 Send Message
               </button>

@@ -25,7 +25,7 @@ const photoGalleryItems = [
 
 const About = () => {
   return (
-    <div className="pt-24 pb-20 min-h-screen">
+    <div className="pt-24 pb-20 min-h-[100dvh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="mb-12 max-w-3xl">
@@ -33,7 +33,7 @@ const About = () => {
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Story Behind the Systems</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4 leading-tight pb-1">
             Where Silicon Meets Software.
           </h1>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
@@ -47,7 +47,7 @@ const About = () => {
           <div className="lg:col-span-7 space-y-6">
             {/* Card 1: Academic Roots */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 sm:p-8 shadow-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
-              <div className="flex items-center justify-between gap-4 mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
                   <Cpu className="w-4 h-4" />
                   Academic Roots
@@ -57,7 +57,7 @@ const About = () => {
                   B.Tech ECE &apos;26
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Appreciating &ldquo;The Metal&rdquo;
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
@@ -67,7 +67,7 @@ const About = () => {
 
             {/* Card 2: Professional Experience */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 sm:p-8 shadow-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
-              <div className="flex items-center justify-between gap-4 mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
                   <Briefcase className="w-4 h-4" />
                   Professional Experience
@@ -77,7 +77,7 @@ const About = () => {
                   Gulf Infotech
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Engineering Production AI &amp; Web Systems
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
@@ -87,7 +87,7 @@ const About = () => {
 
             {/* Card 3: Community & Bot Architecture */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-6 sm:p-8 shadow-sm hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-300">
-              <div className="flex items-center justify-between gap-4 mb-4">
+              <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-teal-600 dark:text-teal-400">
                   <Gamepad2 className="w-4 h-4" />
                   Community &amp; Bot Architecture
@@ -104,7 +104,7 @@ const About = () => {
                   Discord Dev
                 </span>
               </div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                 Scalable Server &amp; Custom Bot Engineering
               </h2>
               <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
@@ -112,7 +112,7 @@ const About = () => {
               </p>
               <Link
                 to="/projects/discord-bots"
-                className="mt-4 inline-block font-medium text-zinc-900 dark:text-zinc-100 hover:underline"
+                className="mt-4 inline-flex items-center min-h-[44px] py-2 font-medium text-zinc-900 dark:text-zinc-100 hover:underline"
               >
                 Explore Custom Bots →
               </Link>
@@ -121,12 +121,12 @@ const About = () => {
 
           {/* Right Column: Bento-Style Photo Grid */}
           <div className="lg:col-span-5 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/50 rounded-2xl p-5 sm:p-6 shadow-sm transition-colors duration-300">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <div>
                 <span className="text-xs font-mono uppercase tracking-wider text-teal-600 dark:text-teal-400 block">
                   Visual Snapshots
                 </span>
-                <h2 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+                <h2 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100">
                   Lab, Desk &amp; Beyond
                 </h2>
               </div>

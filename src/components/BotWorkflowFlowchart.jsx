@@ -775,7 +775,7 @@ const BotWorkflowFlowchart = () => {
               setSelectedNodeId(null);
               setActiveLensKind(null);
             }}
-            className="self-start sm:self-auto shrink-0 px-2.5 py-1 rounded-lg font-mono text-[11px] bg-zinc-200/80 hover:bg-zinc-300/80 text-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 transition-colors"
+            className="self-start sm:self-auto shrink-0 inline-flex items-center justify-center min-h-[44px] px-3.5 py-2 rounded-lg font-mono text-[11px] bg-zinc-200/80 hover:bg-zinc-300/80 text-zinc-800 dark:bg-zinc-800 dark:hover:bg-zinc-700 dark:text-zinc-200 transition-colors"
           >
             Reset Focus
           </button>

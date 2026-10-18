@@ -80,13 +80,13 @@ const serverOpsCommands = [
 
 const DiscordBot = () => {
   return (
-    <div className="pt-24 pb-24 min-h-screen">
+    <div className="pt-24 pb-24 min-h-[100dvh]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">
           <Link
             to="/about"
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to About</span>
@@ -94,7 +94,7 @@ const DiscordBot = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="relative overflow-hidden rounded-3xl border border-zinc-800/80 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 text-zinc-100 p-8 sm:p-12 lg:p-16 shadow-2xl mb-12">
+        <section className="relative overflow-hidden rounded-3xl border border-zinc-800/80 bg-gradient-to-br from-zinc-950 via-zinc-900 to-zinc-950 text-zinc-100 p-6 sm:p-12 lg:p-16 shadow-2xl mb-12">
           <div className="pointer-events-none absolute -top-24 -right-24 w-96 h-96 rounded-full bg-indigo-500/15 blur-3xl" />
           <div className="pointer-events-none absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-teal-500/10 blur-3xl" />
 
@@ -111,16 +111,16 @@ const DiscordBot = () => {
               <span>Internal Discord Node · Case Study</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 leading-tight pb-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-5 leading-tight pb-1">
               Custom Bot Architecture &amp; Telemetry Engine
             </h1>
 
-            <p className="text-lg sm:text-xl text-zinc-300 leading-relaxed max-w-3xl mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-zinc-300 leading-relaxed max-w-3xl mb-8">
               A bespoke, multi-server operations and analytics platform built for a competitive gaming organization.
             </p>
 
             {/* Telemetry Metrics Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-zinc-800/80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6 border-t border-zinc-800/80">
               <div>
                 <span className="block text-xs font-mono uppercase tracking-wider text-zinc-400">
                   War Polling Cycle
@@ -159,7 +159,7 @@ const DiscordBot = () => {
 
         {/* Tech Stack Strip */}
         <section className="mb-14">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400">
               CORE INFRASTRUCTURE STACK
             </span>
@@ -176,7 +176,7 @@ const DiscordBot = () => {
                   key={tech.name}
                   className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/70 shadow-sm hover:border-teal-500/40 dark:hover:border-teal-500/40 transition-colors"
                 >
-                  <div className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-teal-600 dark:text-teal-400">
+                  <div className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800 text-teal-600 dark:text-teal-400 shrink-0">
                     <IconComponent className="w-4 h-4" />
                   </div>
                   <div>
@@ -199,7 +199,7 @@ const DiscordBot = () => {
             <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 block mb-2">
               01 // SYSTEM ARCHITECTURE &amp; SUBSYSTEMS
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
               Engineering Highlights
             </h2>
           </div>
@@ -208,9 +208,9 @@ const DiscordBot = () => {
             {/* Card 1: Algorithmic Analytics (Spans 2 columns on lg) */}
             <div className="lg:col-span-2 bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/60 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                   <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-teal-600 dark:text-teal-400">
-                    <Activity className="w-4 h-4" />
+                    <Activity className="w-4 h-4 shrink-0" />
                     Algorithmic Analytics
                   </span>
                   <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-teal-500/10 text-teal-600 dark:text-teal-300 border border-teal-500/20">
@@ -240,9 +240,9 @@ const DiscordBot = () => {
             {/* Card 2: Memory-Safe Scaling */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/60 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                   <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
-                    <Zap className="w-4 h-4" />
+                    <Zap className="w-4 h-4 shrink-0" />
                     Memory-Safe Scaling
                   </span>
                   <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-indigo-500/10 text-indigo-600 dark:text-indigo-300 border border-indigo-500/20">
@@ -250,7 +250,7 @@ const DiscordBot = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                   Write-Through Caching &amp; Debounce Locks
                 </h3>
 
@@ -259,7 +259,7 @@ const DiscordBot = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
                 <span>GC SWEEPERS: ACTIVE</span>
                 <span>DEBOUNCE: 2500ms</span>
               </div>
@@ -268,9 +268,9 @@ const DiscordBot = () => {
             {/* Card 3: Automated Telemetry */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/60 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                   <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-sky-600 dark:text-sky-400">
-                    <Clock className="w-4 h-4" />
+                    <Clock className="w-4 h-4 shrink-0" />
                     Automated Telemetry
                   </span>
                   <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-sky-500/10 text-sky-600 dark:text-sky-300 border border-sky-500/20">
@@ -278,7 +278,7 @@ const DiscordBot = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                   15-Minute Leaderboard Sync &amp; Daily Resets
                 </h3>
 
@@ -287,7 +287,7 @@ const DiscordBot = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
                 <span>SYNC: */15 * * * *</span>
                 <span>ROLLOVER: DAILY UTC</span>
               </div>
@@ -296,9 +296,9 @@ const DiscordBot = () => {
             {/* Card 4: Cloud Archiving Workflow */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/60 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                   <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-                    <FileCode2 className="w-4 h-4" />
+                    <FileCode2 className="w-4 h-4 shrink-0" />
                     Cloud Archiving Workflow
                   </span>
                   <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-300 border border-emerald-500/20">
@@ -306,7 +306,7 @@ const DiscordBot = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                   Hydrated HTML Transcript Pipeline
                 </h3>
 
@@ -315,7 +315,7 @@ const DiscordBot = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
                 <span>FORMAT: HYDRATED HTML</span>
                 <span>TARGET: GCS BUCKET</span>
               </div>
@@ -324,9 +324,9 @@ const DiscordBot = () => {
             {/* Card 5: Stateless Metadata */}
             <div className="bg-white dark:bg-zinc-900/50 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/60 rounded-2xl p-6 sm:p-8 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
+                <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4 mb-4">
                   <span className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                    <Layers className="w-4 h-4" />
+                    <Layers className="w-4 h-4 shrink-0" />
                     Stateless Metadata
                   </span>
                   <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-300 border border-amber-500/20">
@@ -334,7 +334,7 @@ const DiscordBot = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
                   Permission Overwrite Bitflag Hijacking
                 </h3>
 
@@ -343,7 +343,7 @@ const DiscordBot = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex items-center justify-between text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <div className="mt-6 pt-4 border-t border-zinc-200/70 dark:border-zinc-800/60 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
                 <span>STATE: CHANNEL BITFLAGS</span>
                 <span>LATENCY: O(1) LOCAL</span>
               </div>
@@ -358,7 +358,7 @@ const DiscordBot = () => {
               <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 block mb-2">
                 02 // CLOUD ARCHIVING WORKFLOW
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Multi-Tiered Ticket &amp; Cloud Archiving Workflow
               </h2>
             </div>
@@ -377,7 +377,7 @@ const DiscordBot = () => {
               <span className="text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 block mb-2">
                 03 // SERVER OPS &amp; DEV DAEMONS
               </span>
-              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100">
                 Infrastructure &amp; Diagnostics Command Index
               </h2>
             </div>
@@ -390,15 +390,15 @@ const DiscordBot = () => {
           <div className="overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/60 backdrop-blur-md shadow-sm">
             {/* Terminal Window Header Bar */}
             <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-zinc-100/90 dark:bg-zinc-950/90 border-b border-zinc-200 dark:border-zinc-800/80">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 text-xs font-mono text-zinc-500 dark:text-zinc-400">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 shrink-0" />
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 shrink-0" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 shrink-0" />
+                <span className="ml-2 text-xs font-mono text-zinc-500 dark:text-zinc-400 truncate">
                   internal-discord-node://commands/ops-daemons
                 </span>
               </div>
-              <span className="hidden sm:inline-block text-[11px] font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+              <span className="hidden sm:inline-block text-[11px] font-mono uppercase tracking-wider text-emerald-600 dark:text-emerald-400 shrink-0">
                 REST v14 · Slash Registry
               </span>
             </div>
@@ -420,7 +420,7 @@ const DiscordBot = () => {
                 >
                   {/* Command Name & Arguments */}
                   <div className="md:col-span-3 flex flex-col">
-                    <code className="font-mono text-sm font-semibold text-emerald-600 dark:text-emerald-400">
+                    <code className="font-mono text-sm font-semibold text-emerald-600 dark:text-emerald-400 break-words">
                       {item.command}
                     </code>
                     <span className="font-mono text-[11px] text-zinc-500 dark:text-zinc-500 mt-0.5">
@@ -429,7 +429,7 @@ const DiscordBot = () => {
                   </div>
 
                   {/* Subsystem Pill */}
-                  <div className="md:col-span-2 flex items-center gap-2 mt-1 md:mt-0">
+                  <div className="md:col-span-2 flex flex-wrap items-center gap-2 mt-1 md:mt-0">
                     <span className="md:hidden text-[11px] font-mono uppercase text-zinc-400">
                       Subsystem:
                     </span>
@@ -439,7 +439,7 @@ const DiscordBot = () => {
                   </div>
 
                   {/* Permissions */}
-                  <div className="md:col-span-2 flex items-center gap-2">
+                  <div className="md:col-span-2 flex flex-wrap items-center gap-2">
                     <span className="md:hidden text-[11px] font-mono uppercase text-zinc-400">
                       Scope:
                     </span>
@@ -462,7 +462,7 @@ const DiscordBot = () => {
         <section className="rounded-2xl bg-white dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/70 p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="space-y-1.5">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
-              <Cpu className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
+              <Cpu className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
               <span>Source Code &amp; Security Policy</span>
             </div>
             <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-zinc-100">
@@ -475,16 +475,16 @@ const DiscordBot = () => {
 
           <Link
             to="/contact"
-            className="group relative inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 font-semibold text-sm shadow-sm hover:bg-zinc-800 dark:hover:bg-white transition-all duration-300 shrink-0"
+            className="group relative inline-flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto min-h-[44px] px-6 py-3.5 rounded-xl bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-950 font-semibold text-sm shadow-sm hover:bg-zinc-800 dark:hover:bg-white transition-all duration-300 shrink-0"
           >
-            <Lock className="w-4 h-4 text-teal-400 dark:text-teal-600 transition-transform duration-300 group-hover:scale-110" />
+            <Lock className="w-4 h-4 text-teal-400 dark:text-teal-600 transition-transform duration-300 group-hover:scale-110 shrink-0" />
             <div className="flex flex-col text-left">
               <span className="leading-tight">Private Repository</span>
               <span className="text-[11px] font-mono font-normal text-zinc-400 dark:text-zinc-600 group-hover:text-teal-300 dark:group-hover:text-teal-700 transition-colors">
                 Contact for source access
               </span>
             </div>
-            <ArrowUpRight className="w-4 h-4 ml-1 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 transition-all" />
+            <ArrowUpRight className="w-4 h-4 ml-1 opacity-70 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:opacity-100 transition-all shrink-0" />
           </Link>
         </section>
       </div>

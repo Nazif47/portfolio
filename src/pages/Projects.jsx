@@ -44,16 +44,16 @@ const Projects = () => {
   ];
 
   return (
-    <div className="pt-24 pb-16 min-h-screen">
+    <div className="pt-24 pb-16 min-h-[100dvh]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-zinc-200/70 dark:bg-zinc-900/80 text-zinc-700 dark:text-zinc-300 border border-zinc-300 dark:border-zinc-800 mb-4">
             Hardware-Software Systems &amp; Edge AI
           </div>
-          <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
             Project Directory
           </h1>
-          <p className="mt-4 text-zinc-600 dark:text-zinc-400 max-w-2xl text-lg font-light">
+          <p className="mt-4 text-zinc-600 dark:text-zinc-400 max-w-2xl text-base sm:text-lg font-light">
             A deep dive into my flagship embedded systems, distributed IoT telemetry, and hybrid edge-cloud AI architectures.
           </p>
         </div>

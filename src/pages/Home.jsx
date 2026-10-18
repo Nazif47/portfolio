@@ -240,14 +240,14 @@ const Home = () => {
   ];
 
   return (
-    <div className="flex flex-col flex-grow w-full pt-16">
+    <div className="flex flex-col flex-grow w-full pt-16 overflow-x-hidden">
       {/* Hero Section (Clean, Unboxed Centered Stack) */}
-      <section className="min-h-[85vh] flex flex-col justify-center items-center py-12 md:py-20">
+      <section className="min-h-[85dvh] flex flex-col justify-center items-center py-12 md:py-20">
         <MotionDiv
           variants={heroContainerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl lg:max-w-6xl mx-auto px-6 text-center flex flex-col items-center"
+          className="w-full max-w-5xl lg:max-w-6xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center"
         >
           {/* 1. Profile Image */}
           <MotionDiv variants={heroAvatarVariants}>
@@ -257,14 +257,14 @@ const Home = () => {
               width="240"
               height="240"
               decoding="async"
-              className="w-40 h-40 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
+              className="w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full object-cover object-top border border-zinc-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 mb-8"
             />
           </MotionDiv>
 
           {/* 2. Main Heading */}
           <MotionH1
             variants={heroItemSpringVariants}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-white"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-4 text-zinc-900 dark:text-white"
           >
             Hi, I&apos;m Nazif.
           </MotionH1>
@@ -280,7 +280,7 @@ const Home = () => {
           {/* 4. Bio */}
           <MotionP
             variants={heroItemSpringVariants}
-            className="mt-2 max-w-3xl text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mx-auto font-light leading-relaxed"
+            className="mt-2 max-w-3xl text-base sm:text-lg md:text-xl text-zinc-600 dark:text-zinc-400 mx-auto font-light leading-relaxed"
           >
             I build intelligent, end-to-end systems—bridging the gap between distributed edge hardware, business automation, and high-performance modern web applications.
           </MotionP>
@@ -288,7 +288,7 @@ const Home = () => {
           {/* 5. CTA Buttons */}
           <MotionDiv
             variants={heroItemSpringVariants}
-            className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+            className="mt-10 w-full sm:w-auto flex flex-col sm:flex-row justify-center gap-4"
           >
             <MotionDiv
               whileHover={{ y: -2, scale: 1.015 }}
@@ -297,7 +297,7 @@ const Home = () => {
             >
               <Link
                 to="/projects"
-                className="block bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white font-medium px-7 py-3.5 text-base md:text-lg rounded-lg transition-all shadow-sm text-center"
+                className="inline-flex items-center justify-center w-full sm:w-auto min-h-[44px] bg-zinc-900 text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-950 dark:hover:bg-white font-medium px-7 py-3.5 text-base md:text-lg rounded-lg transition-all shadow-sm text-center"
               >
                 View Projects
               </Link>
@@ -309,7 +309,7 @@ const Home = () => {
             >
               <Link
                 to="/contact"
-                className="block bg-white dark:bg-transparent border border-zinc-300 text-zinc-800 hover:bg-zinc-100 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center shadow-sm dark:shadow-none"
+                className="inline-flex items-center justify-center w-full sm:w-auto min-h-[44px] bg-white dark:bg-transparent border border-zinc-300 text-zinc-800 hover:bg-zinc-100 hover:border-zinc-400 dark:border-zinc-800 dark:text-zinc-300 px-7 py-3.5 text-base md:text-lg rounded-lg dark:hover:bg-zinc-900 dark:hover:border-zinc-700 transition-all text-center shadow-sm dark:shadow-none"
               >
                 Contact Me
               </Link>
@@ -333,7 +333,7 @@ const Home = () => {
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>01 // Engineering Domains</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 What I Build
               </h2>
             </div>
@@ -369,7 +369,7 @@ const Home = () => {
                   />
 
                   <div>
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
                       <div className="w-11 h-11 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 flex items-center justify-center text-teal-600 dark:text-teal-400 group-hover:border-teal-500/40 group-hover:bg-teal-500/10 transition-colors">
                         <IconComponent className="w-5 h-5" />
                       </div>
@@ -392,7 +392,7 @@ const Home = () => {
                         key={sIdx}
                         className="flex items-center gap-2 text-xs text-zinc-600 dark:text-zinc-400 font-mono"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400/70" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400/70 shrink-0" />
                         <span>{spec}</span>
                       </div>
                     ))}
@@ -419,7 +419,7 @@ const Home = () => {
                 <Layers className="w-3.5 h-3.5" />
                 <span>02 // Production Stack Matrix</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 Core Technologies
               </h2>
             </div>
@@ -453,7 +453,7 @@ const Home = () => {
                     aria-hidden="true"
                   />
 
-                  <div className="flex items-center justify-between mb-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                     <span className="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-zinc-100 dark:bg-zinc-950/90 text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-800 group-hover:text-cyan-700 dark:group-hover:text-cyan-300 group-hover:border-cyan-500/30 transition-colors">
                       {group.layer}
                     </span>
@@ -470,7 +470,7 @@ const Home = () => {
                     {group.skills.map((skill, sIdx) => (
                       <li
                         key={sIdx}
-                        className="flex items-center justify-between gap-2 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200/80 dark:border-zinc-800/60 px-3 py-2 group-hover:bg-white dark:group-hover:bg-zinc-900/70 group-hover:border-zinc-300 dark:group-hover:border-zinc-700/70 transition-colors"
+                        className="flex flex-wrap items-center justify-between gap-1.5 rounded-lg bg-zinc-50 dark:bg-zinc-950/50 border border-zinc-200/80 dark:border-zinc-800/60 px-3 py-2 group-hover:bg-white dark:group-hover:bg-zinc-900/70 group-hover:border-zinc-300 dark:group-hover:border-zinc-700/70 transition-colors"
                       >
                         <div className="flex items-center gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400/80 shrink-0" />
@@ -505,13 +505,13 @@ const Home = () => {
               <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-teal-600 dark:text-teal-400 mb-2">
                 <span>03 // Case Studies</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 Featured Highlights
               </h2>
             </div>
             <Link
               to="/projects"
-              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors group"
+              className="inline-flex items-center gap-2 min-h-[44px] py-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-teal-600 dark:hover:text-teal-300 transition-colors group"
             >
               <span>Explore Full Project Directory</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -577,7 +577,7 @@ const Home = () => {
                   <Trophy className="w-4 h-4" />
                   <span>04 // NATIONAL RECOGNITION</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight pb-1">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white leading-tight pb-1">
                   National Level Hackathon Winner: Smart India Hackathon (SIH)
                 </h2>
               </div>
@@ -647,7 +647,7 @@ const Home = () => {
                 key={idx}
                 whileHover={{ y: -6, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 280, damping: 22 }}
-                className="group relative w-80 sm:w-96 md:w-[440px] aspect-[16/10] mr-6 shrink-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="group relative w-72 sm:w-96 md:w-[440px] max-w-[85vw] aspect-[16/10] mr-6 shrink-0 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow-md hover:shadow-xl transition-shadow duration-300"
               >
                 <img
                   src={item.src}
@@ -675,18 +675,19 @@ const Home = () => {
 
         {/* Standalone Interactive CTA Pill Below Marquee */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 dark:text-zinc-400">
-            <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
+          <div className="flex items-center gap-2.5 text-xs font-mono text-zinc-600 dark:text-zinc-400 text-center sm:text-left">
+            <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shrink-0" />
             <span>TEAM AURA +999 · HARDWARE EDITION WINNER</span>
           </div>
           <MotionDiv
             whileHover={{ y: -2, scale: 1.015 }}
             whileTap={{ scale: 0.985 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="w-full sm:w-auto"
           >
             <Link
               to="/projects/sih"
-              className="group inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700/80 hover:border-teal-500 dark:hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm hover:shadow-md transition-all duration-300"
+              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700/80 hover:border-teal-500 dark:hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm hover:shadow-md transition-all duration-300 text-center"
             >
               <span>Explore the Smart Blind Stick Architecture →</span>
             </Link>
@@ -709,7 +710,7 @@ const Home = () => {
                 <Award className="w-3.5 h-3.5" />
                 <span>05 // Arena &amp; Sprints</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-900 dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-zinc-900 dark:text-white">
                 Competitive Engineering &amp; Hackathons
               </h2>
             </div>
