@@ -149,7 +149,7 @@ export default function App() {
       <div className="w-full min-h-screen flex flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 relative overflow-x-hidden transition-colors duration-500">
         <AtmosphericBackground />
         <Navbar />
-        <main className="w-full min-h-screen flex flex-col flex-grow relative z-10 bg-transparent text-zinc-900 dark:text-zinc-100 transition-colors duration-500">
+        <main className="flex-grow w-full relative z-10 flex flex-col bg-transparent text-zinc-900 dark:text-zinc-100 transition-colors duration-500">
           <AnimatedRoutes />
         </main>
         <Footer />

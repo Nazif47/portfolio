@@ -25,7 +25,7 @@ const photoGalleryItems = [
 
 const About = () => {
   return (
-    <div className="w-full pt-24 pb-20 min-h-[100dvh]">
+    <div className="w-full flex-grow pt-24 pb-20">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="mb-12 max-w-3xl">

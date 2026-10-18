@@ -80,7 +80,7 @@ const serverOpsCommands = [
 
 const DiscordBot = () => {
   return (
-    <div className="w-full pt-24 pb-24 min-h-[100dvh]">
+    <div className="w-full flex-grow pt-24 pb-24">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-8">

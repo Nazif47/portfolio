@@ -4,8 +4,7 @@
 
 @layer base {
   html,
-  body,
-  #root {
+  body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -15,10 +14,19 @@
     scroll-behavior: smooth;
     @apply bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 transition-colors duration-500 overflow-x-hidden;
   }
-  body,
-  #root {
+  body {
     @apply bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100 antialiased selection:bg-teal-500/20 dark:selection:bg-zinc-800 selection:text-zinc-900 dark:selection:text-zinc-100 transition-colors duration-500 overflow-x-hidden;
   }
+}
+
+#root {
+  width: 100%;
+  max-width: none !important;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 @layer utilities {

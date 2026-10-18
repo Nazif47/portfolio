@@ -3,8 +3,8 @@ import { GitHubIcon, LinkedInIcon } from './SocialIcons';
 
 const Footer = () => {
   return (
-    <footer className="relative z-10 w-full pb-safe px-safe border-t border-zinc-200 dark:border-zinc-800 bg-white/90 dark:bg-zinc-950/90 text-zinc-900 dark:text-zinc-100 backdrop-blur-md mt-auto transition-colors duration-300">
-      <div className="w-full max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="relative z-10 w-full border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 py-6 sm:py-8 mt-auto transition-colors duration-300">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
             &copy; 2026 Nazif. All rights reserved.

@@ -19,7 +19,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="w-full pt-24 pb-16 min-h-[100dvh]">
+    <div className="w-full flex-grow pt-24 pb-16">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 mb-4">
