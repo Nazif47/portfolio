@@ -6,9 +6,13 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [honeypotValue, setHoneypotValue] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (honeypotValue) {
+      return;
+    }
     const subject = encodeURIComponent(
       `Portfolio Inquiry from ${name.trim() || 'Website Visitor'}`
     );
@@ -34,6 +38,16 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80 rounded-2xl p-6 sm:p-8 shadow-sm transition-colors duration-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="website"
+                value={honeypotValue}
+                onChange={(e) => setHoneypotValue(e.target.value)}
+                className="hidden"
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-zinc-700 dark:text-zinc-400 mb-2">Name</label>
                 <input 
