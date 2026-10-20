@@ -9,14 +9,11 @@ You can view the live site here: [nazif-gangawali.com](https://www.nazif-gangawa
 - **Hosting & CI/CD:** Vercel
 - **Security:** Strict CORS, IP Rate Limiting, HTTP Security Headers, and Form Honeypots
 
-## 🚀 Local Development
-To run this project locally:
-1. Clone the repository: `git clone [https://github.com/Nazif47/portfolio.git](https://github.com/Nazif47/portfolio.git)`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-
 ## 🛡️ Architecture & Security
 This project goes beyond standard UI development. It features custom Open Graph metadata for social previews, a honeypot spam trap on the contact API, rate limiting to prevent backend abuse, and strict HTTP headers to block automated AI scrapers.
+
+## ⚖️ License & Copyright
+All rights reserved. This repository is made public strictly as a read-only proof of work for recruiters and hiring managers. Cloning, copying, or reusing this source code or its assets for other projects is strictly prohibited.
 
 ---
 *Designed and engineered by [Nazif Gangawali](https://www.nazif-gangawali.com).*
