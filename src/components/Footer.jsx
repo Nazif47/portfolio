@@ -6,9 +6,21 @@ const Footer = () => {
     <footer className="relative z-10 w-full border-t border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 py-4 sm:py-5 mt-auto transition-colors duration-300">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
-            &copy; {new Date().getFullYear()} Nazif Gangawali. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-center sm:text-left">
+            <p className="text-sm text-zinc-600 dark:text-zinc-400">
+              Designed &amp; Engineered by Nazif Gangawali
+            </p>
+            <span className="hidden sm:inline text-zinc-300 dark:text-zinc-700" aria-hidden="true">•</span>
+            <a
+              href="https://github.com/Nazif47/portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+            >
+              <GitHubIcon className="h-4 w-4" />
+              <span>View Source Code on GitHub</span>
+            </a>
+          </div>
           <div className="flex items-center gap-2 sm:gap-4">
             <a
               href="https://github.com/Nazif47"
