@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, useAnimationFrame } from 'framer-motion';
 import {
   Cpu,
@@ -155,8 +155,18 @@ const Home = () => {
 
   const [isMarqueePaused, setIsMarqueePaused] = useState(false);
   const [isSihCertOpen, setIsSihCertOpen] = useState(false);
+  const { hash } = useLocation();
   const marqueeX = useMotionValue(0);
   const marqueeTransform = useTransform(marqueeX, (val) => `${val}%`);
+
+  useEffect(() => {
+    if (!hash) return;
+    const targetId = hash.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [hash]);
 
   useEffect(() => {
     if (!isSihCertOpen) return;
@@ -725,7 +735,7 @@ const Home = () => {
       </section>
 
       {/* Competitive Engineering & Hackathons Section */}
-      <section className="w-full py-14 md:py-16">
+      <section id="hackathons" className="w-full py-14 md:py-16 scroll-mt-24">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <MotionDiv
             variants={sectionHeaderVariants}

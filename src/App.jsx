@@ -63,8 +63,18 @@ const AnimatedRoutes = () => {
   const location = useLocation();
 
   useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace('#', '');
+      const timer = setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 320);
+      return () => clearTimeout(timer);
+    }
     window.scrollTo({ top: 0, behavior: 'instant' });
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   return (
     <Suspense fallback={<div className="w-full flex-grow min-h-[60dvh]" aria-hidden="true" />}>
