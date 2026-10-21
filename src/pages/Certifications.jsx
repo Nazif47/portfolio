@@ -164,7 +164,7 @@ const Certifications = () => {
             role="button"
             tabIndex={0}
             aria-label={`View certificate for ${UNIVERSITY_RECOGNITION.title}`}
-            className="relative group w-full h-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-teal-500/[0.08] via-white/95 to-cyan-500/[0.08] dark:from-teal-500/[0.12] dark:via-zinc-900/85 dark:to-cyan-500/[0.10] backdrop-blur-md border-2 border-teal-500/40 dark:border-teal-400/40 hover:border-teal-500 dark:hover:border-teal-400 ring-1 ring-teal-500/15 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer text-left overflow-hidden"
+            className="relative group w-full h-auto flex flex-col md:flex-row items-center justify-between p-4 md:p-6 gap-4 md:gap-6 rounded-2xl bg-gradient-to-r from-teal-500/[0.08] via-white/95 to-cyan-500/[0.08] dark:from-teal-500/[0.12] dark:via-zinc-900/85 dark:to-cyan-500/[0.10] backdrop-blur-md border-2 border-teal-500/40 dark:border-teal-400/40 hover:border-teal-500 dark:hover:border-teal-400 ring-1 ring-teal-500/15 shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 cursor-pointer text-left overflow-hidden"
           >
             {/* Subtle Ambient Glow */}
             <div
@@ -219,7 +219,7 @@ const Certifications = () => {
               role="button"
               tabIndex={0}
               aria-label={`View certificate for ${cert.title}`}
-              className="relative group w-full h-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 p-5 sm:p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer text-left overflow-hidden"
+              className="relative group w-full h-auto flex flex-col md:flex-row items-center justify-between p-4 md:p-6 gap-4 md:gap-6 rounded-2xl bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer text-left overflow-hidden"
             >
               {/* Subtle Hover Gradient Glow matching ProjectCard */}
               <div
@@ -278,7 +278,7 @@ const Certifications = () => {
 
           {selectedCert.isSplitView ? (
             <div
-              className="relative max-w-6xl w-full max-h-[90dvh] flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 p-6 sm:p-8 md:p-10 rounded-2xl bg-zinc-950/95 border border-zinc-800 shadow-2xl overflow-y-auto"
+              className="relative max-w-6xl w-full max-h-[90dvh] flex flex-col md:flex-row items-center justify-between p-6 md:p-12 gap-6 md:gap-10 rounded-2xl bg-zinc-950/95 border border-zinc-800 shadow-2xl overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Left Side: Formatted Title & Description */}
@@ -296,7 +296,7 @@ const Certifications = () => {
                 <img
                   src={selectedCert.image}
                   alt={selectedCert.title}
-                  className="w-full h-auto max-h-[75dvh] object-contain rounded-xl border border-zinc-800 shadow-xl bg-white"
+                  className="w-full max-w-full h-auto max-h-[75dvh] object-contain rounded-xl border border-zinc-800 shadow-xl bg-white"
                 />
               </div>
             </div>
@@ -308,7 +308,7 @@ const Certifications = () => {
               <img
                 src={selectedCert.image}
                 alt={selectedCert.title}
-                className="w-full h-auto max-h-[78dvh] object-contain rounded-2xl shadow-2xl border border-zinc-800 bg-zinc-950"
+                className="w-full max-w-full h-auto max-h-[78dvh] object-contain rounded-2xl shadow-2xl border border-zinc-800 bg-zinc-950"
               />
 
               <p className="text-white text-xl md:text-2xl font-medium mt-6 text-center">

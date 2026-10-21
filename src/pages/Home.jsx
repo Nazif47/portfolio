@@ -839,7 +839,7 @@ const Home = () => {
             <img
               src="/certificates/SIHwinningCertificate.png"
               alt="Smart India Hackathon Winning Certificate"
-              className="w-full h-auto max-h-[88dvh] object-contain"
+              className="w-full max-w-full h-auto max-h-[88dvh] object-contain"
             />
           </div>
         </div>,
