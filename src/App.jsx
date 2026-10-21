@@ -12,6 +12,7 @@ const SIHProject = lazy(() => import('./pages/projects/SIHProject'));
 const FinalYearProject = lazy(() => import('./pages/projects/FinalYearProject'));
 const DiscordBot = lazy(() => import('./pages/projects/DiscordBot'));
 const Experience = lazy(() => import('./pages/Experience'));
+const Certifications = lazy(() => import('./pages/Certifications'));
 const Contact = lazy(() => import('./pages/Contact'));
 
 const pageVariants = {
@@ -126,6 +127,14 @@ const AnimatedRoutes = () => {
             element={
               <PageTransition>
                 <Experience />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/certifications"
+            element={
+              <PageTransition>
+                <Certifications />
               </PageTransition>
             }
           />

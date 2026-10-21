@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useTransform, useAnimationFrame } from 'framer-motion';
 import {
@@ -17,7 +18,8 @@ import {
   Sparkles,
   Layers,
   Trophy,
-  Award
+  Award,
+  X
 } from 'lucide-react';
 import ProjectCard from '../components/ProjectCard';
 import { createPlaceholderDataUri } from '../utils/placeholderSvg';
@@ -152,8 +154,18 @@ const Home = () => {
   const MotionP = motion.p;
 
   const [isMarqueePaused, setIsMarqueePaused] = useState(false);
+  const [isSihCertOpen, setIsSihCertOpen] = useState(false);
   const marqueeX = useMotionValue(0);
   const marqueeTransform = useTransform(marqueeX, (val) => `${val}%`);
+
+  useEffect(() => {
+    if (!isSihCertOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsSihCertOpen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isSihCertOpen]);
 
   useAnimationFrame((_, delta) => {
     if (isMarqueePaused) return;
@@ -679,19 +691,36 @@ const Home = () => {
             <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shrink-0" />
             <span>TEAM AURA +999 · HARDWARE EDITION WINNER</span>
           </div>
-          <MotionDiv
-            whileHover={{ y: -2, scale: 1.015 }}
-            whileTap={{ scale: 0.985 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            className="w-full sm:w-auto"
-          >
-            <Link
-              to="/projects/sih"
-              className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700/80 hover:border-teal-500 dark:hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm hover:shadow-md transition-all duration-300 text-center"
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full sm:w-auto">
+            <MotionDiv
+              whileHover={{ y: -2, scale: 1.015 }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="w-full sm:w-auto"
             >
-              <span>Explore the Smart Blind Stick Architecture →</span>
-            </Link>
-          </MotionDiv>
+              <button
+                type="button"
+                onClick={() => setIsSihCertOpen(true)}
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-5 py-3 rounded-full text-sm sm:text-base font-semibold bg-teal-500/10 dark:bg-teal-500/15 backdrop-blur-md text-teal-700 dark:text-teal-300 border border-teal-500/30 dark:border-teal-400/30 hover:border-teal-500 dark:hover:border-teal-400 hover:bg-teal-500/20 shadow-sm hover:shadow-md transition-all duration-300 text-center cursor-pointer"
+              >
+                <Trophy className="w-4 h-4 shrink-0" aria-hidden="true" />
+                <span>Winning Certificate</span>
+              </button>
+            </MotionDiv>
+            <MotionDiv
+              whileHover={{ y: -2, scale: 1.015 }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              className="w-full sm:w-auto"
+            >
+              <Link
+                to="/projects/sih"
+                className="group inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-[44px] px-6 py-3 rounded-full text-sm sm:text-base font-semibold bg-white/90 dark:bg-zinc-900/80 backdrop-blur-md text-zinc-900 dark:text-zinc-100 border border-zinc-300 dark:border-zinc-700/80 hover:border-teal-500 dark:hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-300 shadow-sm hover:shadow-md transition-all duration-300 text-center"
+              >
+                <span>Explore the Smart Blind Stick Architecture →</span>
+              </Link>
+            </MotionDiv>
+          </div>
         </div>
       </section>
 
@@ -762,8 +791,50 @@ const Home = () => {
               </MotionDiv>
             ))}
           </div>
+
+          {/* Right-Aligned Link to Certifications Page */}
+          <div className="mt-6 flex justify-end">
+            <Link
+              to="/certifications"
+              className="group inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300 transition-colors"
+            >
+              <span>My Awards and Certifications</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
+
+      {/* SIH Winning Certificate Modal */}
+      {isSihCertOpen && typeof document !== 'undefined' && createPortal(
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 sm:p-6"
+          onClick={() => setIsSihCertOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Smart India Hackathon Winning Certificate"
+        >
+          <button
+            type="button"
+            onClick={() => setIsSihCertOpen(false)}
+            aria-label="Close certificate modal"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-[60] inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2.5 bg-zinc-900/70 hover:bg-zinc-900 text-white rounded-full backdrop-blur-md transition-all cursor-pointer"
+          >
+            <X className="w-5 h-5" aria-hidden="true" />
+          </button>
+          <div
+            className="relative max-w-5xl w-full max-h-[90dvh] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl bg-zinc-950/90 border border-zinc-800"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src="/certificates/SIHwinningCertificate.png"
+              alt="Smart India Hackathon Winning Certificate"
+              className="w-full h-auto max-h-[88dvh] object-contain"
+            />
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };
