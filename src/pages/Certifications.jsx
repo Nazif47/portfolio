@@ -62,7 +62,7 @@ const RAW_CERTIFICATES = [
   },
   {
     id: 'sih-2024-internal',
-    title: 'SIH 2024 Internal Hackathon',
+    title: 'SIH 2024 Internal Hackathon — 1st Prize Winner',
     image: '/certificates/SIH2024Winner.png',
     logo: '/certificates/SIHlogo.png',
     logoAlt: 'Smart India Hackathon',
@@ -170,7 +170,7 @@ const Certifications = () => {
                   src={cert.logo}
                   alt={cert.logoAlt}
                   loading="lazy"
-                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain bg-transparent"
+                  className="max-h-16 md:max-h-24 w-auto max-w-[120px] md:max-w-[200px] object-contain bg-transparent"
                 />
               </div>
             </div>
@@ -197,21 +197,18 @@ const Certifications = () => {
           </button>
 
           <div
-            className="relative max-w-5xl w-full max-h-[90dvh] flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl bg-zinc-950 border border-zinc-800"
+            className="relative max-w-5xl w-full max-h-[90dvh] flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={selectedCert.image}
               alt={selectedCert.title}
-              className="w-full h-auto max-h-[88dvh] object-contain"
+              className="w-full h-auto max-h-[78dvh] object-contain rounded-2xl shadow-2xl border border-zinc-800 bg-zinc-950"
             />
 
-            {/* Overlaid Title Text on Top of Pop-Up Image */}
-            <div className="absolute bottom-0 inset-x-0 bg-black/75 backdrop-blur-sm px-5 py-4 border-t border-white/10">
-              <p className="text-base sm:text-lg md:text-xl font-semibold text-white text-center drop-shadow-sm">
-                {selectedCert.title}
-              </p>
-            </div>
+            <p className="text-white text-xl md:text-2xl font-medium mt-6 text-center">
+              {selectedCert.title}
+            </p>
           </div>
         </div>,
         document.body
