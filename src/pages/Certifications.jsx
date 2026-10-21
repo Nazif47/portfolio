@@ -98,7 +98,7 @@ const Certifications = () => {
 
   return (
     <div className="w-full flex-grow pt-24 pb-20">
-      <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Navigation */}
         <div className="mb-6">
           <Link
@@ -125,7 +125,7 @@ const Certifications = () => {
         </div>
 
         {/* Vertical List of Certificate Cards */}
-        <div className="flex flex-col space-y-5">
+        <div className="flex flex-col space-y-6">
           {sortedCertificates.map((cert) => (
             <div
               key={cert.id}
@@ -139,10 +139,16 @@ const Certifications = () => {
               role="button"
               tabIndex={0}
               aria-label={`View certificate for ${cert.title}`}
-              className="group w-full flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 p-4 sm:p-5 rounded-2xl bg-white/85 dark:bg-zinc-900/60 backdrop-blur-md border border-zinc-200 dark:border-zinc-800/80 hover:border-teal-500/60 dark:hover:border-teal-400/60 shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer text-left"
+              className="relative group w-full h-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8 p-5 sm:p-6 rounded-2xl bg-white/80 dark:bg-zinc-900/60 backdrop-blur-sm border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer text-left overflow-hidden"
             >
+              {/* Subtle Hover Gradient Glow matching ProjectCard */}
+              <div
+                className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-teal-500/[0.06] via-transparent to-cyan-500/[0.06] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                aria-hidden="true"
+              />
+
               {/* Left: Certificate Preview Image */}
-              <div className="w-full sm:w-48 md:w-56 aspect-[16/11] shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-950">
+              <div className="relative z-10 w-full md:w-64 lg:w-72 aspect-[16/11] shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-950">
                 <img
                   src={cert.image}
                   alt={cert.title}
@@ -152,19 +158,19 @@ const Certifications = () => {
               </div>
 
               {/* Center: Generated Title Text */}
-              <div className="flex-1 min-w-0 text-center sm:text-left px-1">
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors leading-snug">
+              <div className="relative z-10 flex-1 min-w-0 text-center md:text-left">
+                <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-zinc-900 dark:text-zinc-100 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors leading-snug">
                   {cert.title}
                 </h2>
               </div>
 
               {/* Right: Corresponding Event or University Logo */}
-              <div className="shrink-0 flex items-center justify-center w-36 sm:w-44 h-16 px-3 py-2 rounded-xl bg-zinc-50 dark:bg-white/95 border border-zinc-200/80 dark:border-zinc-700/60 shadow-xs">
+              <div className="relative z-10 shrink-0 flex items-center justify-center bg-transparent">
                 <img
                   src={cert.logo}
                   alt={cert.logoAlt}
                   loading="lazy"
-                  className="max-h-11 max-w-full w-auto object-contain"
+                  className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain bg-transparent"
                 />
               </div>
             </div>
