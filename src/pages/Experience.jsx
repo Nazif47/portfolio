@@ -1,9 +1,53 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Briefcase, Calendar, MapPin, CheckCircle2, FileText, X } from 'lucide-react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url
+).toString();
+
+const A4_ASPECT_RATIO = 595.28 / 841.89;
 
 const Experience = () => {
   const [isCertOpen, setIsCertOpen] = useState(false);
+  const modalContainerRef = useRef(null);
+  const [pageWidth, setPageWidth] = useState(600);
+
+  useEffect(() => {
+    if (!isCertOpen) return;
+
+    const updateDimensions = () => {
+      const container = modalContainerRef.current;
+      if (container) {
+        const padding = window.innerWidth < 640 ? 16 : 32;
+        const availableWidth = container.clientWidth - padding;
+        const availableHeight = container.clientHeight - padding;
+        const fittedWidth = Math.floor(
+          Math.min(availableWidth, availableHeight * A4_ASPECT_RATIO)
+        );
+        if (fittedWidth > 0) {
+          setPageWidth(fittedWidth);
+        }
+      }
+    };
+
+    updateDimensions();
+
+    const observer = new ResizeObserver(updateDimensions);
+    if (modalContainerRef.current) {
+      observer.observe(modalContainerRef.current);
+    }
+    window.addEventListener('resize', updateDimensions);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateDimensions);
+    };
+  }, [isCertOpen]);
 
   const partTimeTags = [
     'Full-Stack Web',
@@ -224,14 +268,28 @@ const Experience = () => {
             <X className="w-5 h-5" aria-hidden="true" />
           </button>
           <div
-            className="w-full max-w-4xl h-[85dvh] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl relative"
+            ref={modalContainerRef}
+            className="w-full max-w-4xl h-[85dvh] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl relative flex items-center justify-center p-2 sm:p-4"
             onClick={(e) => e.stopPropagation()}
           >
-            <iframe
-              src="/Nazif_Internship_Certificate.pdf#toolbar=0"
-              className="w-full h-full border-0"
-              title="Internship Certificate"
-            />
+            <Document
+              file="/Nazif_Internship_Certificate.pdf"
+              suspense={false}
+              className="flex items-center justify-center w-full h-full overflow-auto"
+              loading={
+                <div className="text-sm font-mono text-zinc-400 animate-pulse">
+                  Loading certificate...
+                </div>
+              }
+            >
+              <Page
+                pageNumber={1}
+                width={pageWidth}
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+                className="shadow-lg rounded overflow-hidden"
+              />
+            </Document>
           </div>
         </div>,
         document.body
